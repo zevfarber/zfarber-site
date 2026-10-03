@@ -330,7 +330,7 @@ r += proj_band(PRISMA_BLOCK)
 r += paper(
     section('', 'Prisma Talks', '<ul class="arch"><li><a href="https://www.youtube.com/watch?v=ID345_Hxmbk">Introduction to Judaism</a><small>Prisma Guide, YouTube</small></li><li><a href="https://www.youtube.com/watch?v=BJjUWywqcqM">Founder\'s Statement</a><small>Prisma Guide, YouTube</small></li></ul>'),
     section('', 'Thinking Out Loud about Synergistic Religion', render_list(parse('religion-youtube'), two_col=False), f'<p><a href="{LINKS["youtube"]}">The channel →</a></p>'),
-    section('', 'Theology', '<ul class="arch"><li><a href="https://www.thetorah.com/article/torah-is-from-heaven-what-do-we-really-mean">Torah is From Heaven: What Do We Mean?</a><small>TheTorah.com, 2019</small></li><li><a href="https://www.thetorah.com/series/avraham-avinu-is-my-father-thoughts-on-torah-history-and-judaism">Avraham Avinu is My Father: Thoughts on Torah, History, and Judaism</a><small>TheTorah.com series</small></li><li><a href="https://www.zfarber.com/_files/ugd/8598b9_4c33975c1d27423fafa4d255bfe4e33a.pdf">God, Consciousness, and the Problem of Anthropopathism</a><small>PDF</small></li></ul>'))
+    section('', 'Theology', '<ul class="arch"><li><a href="https://www.thetorah.com/article/torah-is-from-heaven-what-do-we-really-mean">Torah is From Heaven: What Do We Mean?</a><small>TheTorah.com, 2019</small></li><li><a href="https://www.thetorah.com/series/avraham-avinu-is-my-father-thoughts-on-torah-history-and-judaism">Avraham Avinu is My Father: Thoughts on Torah, History, and Judaism</a><small>TheTorah.com series</small></li><li><a href="/pdf/God-Consciousness-and-the-Problem-of-Anthropopathism.pdf">God, Consciousness, and the Problem of Anthropopathism</a><small>PDF</small></li></ul>'))
 r += actions('Next', 'Watch, join, or talk it through', ('Watch the channel', LINKS['youtube']),
              [('Join the Prisma mailing list', LINKS['prisma_list']), ('Book a lecture', 'speaking.html'), ('Talk something through', 'consulting.html')])
 pages['religion.html'] = ('Religion · Zev Farber', r)
@@ -393,8 +393,7 @@ sp += paper(
   <div class="topic"><h3>Synergistic religion</h3><p>Religions as expressions of mythic and metaphorical truth rather than as rival factual claims: different facets of a prism, unique but mutually reinforcing, without collapsing them into one. The idea behind Prisma.</p></div>
   <div class="topic"><h3>Halakha and homosexuality</h3><p>The biblical and rabbinic sources, the Orthodox community's responses over the past forty years, and the halakhic category of <em>ʾônēs</em> (duress). Based on my book <em>Homosexual Relationships and Orthodox Judaism</em> (2026).</p></div>
   <div class="topic"><h3>Anything in the archives</h3><p>I also lecture on any subject I have written about: see the <a href="bible.html">Bible</a>, <a href="halakha.html">halakha</a>, and <a href="religion.html">religion</a> pages.</p></div>
-</div>''', NOTE("Draft descriptions, written from Zev's published work; for him to revise.")),
-    section('Where I have spoken', 'Recent venues', '', NOTE('A short list of synagogues, universities, conferences and podcasts, with years; three to eight names.')),
+</div>'''),
     '''<section class="block contact"><div class="wrap">
   <div><div class="label">Inquiries</div><h2 class="h2">About an event</h2><p class="muted">If you are planning a program, a note with the date, place, and audience is enough to start. Talks can be shaped to the room. A one-page bio, a print-quality photo, and a short introduction for the host are available on request.</p></div>
   <form name="speaking" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
@@ -409,7 +408,7 @@ pages['speaking.html'] = ('Speaking · Zev Farber', sp)
 
 # ---------- CONSULTING ----------
 co = page_header('Consulting', 'Private <em>conversations</em>', '', photo='consulting')
-co += paper('''<section class="block"><div class="wrap"><div class="sec-head"><div>''' + NOTE('Skeleton. Zev writes this page. The headings are the structure; the sentences under them show length and register, not copy. "Consulting" itself may be the wrong word.') + '''</div>
+co += paper('''<section class="block"><div class="wrap"><div class="sec-head"><div></div>
 <div class="body prose">
   <h3>Who this is for</h3>
   <p>People working out their religious or theological beliefs, or in a religious quandary, who want to talk it through with someone who has been through it himself.</p>
