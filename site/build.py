@@ -383,8 +383,7 @@ bk += paper(
 pages['books.html'] = ('Books · Zev Farber', bk)
 
 # ---------- SPEAKING ----------
-sp = page_header('Speaking', 'Lectures, courses, and <em>scholar-in-residence weekends</em>',
-    "I teach Bible, halakha, and, through Prisma, the wisdom of the world's religions, at synagogues, universities, churches, interfaith groups, and conferences. Single lectures, series, and scholar-in-residence weekends, in person or online.", photo='speaking')
+sp = page_header('Speaking', 'Lectures, courses, and <em>scholar-in-residence weekends</em>', photo='speaking')
 sp += paper(
     section('Topics', 'What I talk about', '''<div class="topics">
   <div class="topic"><h3>The Bible in history</h3><p>What the Bible looks like when it is read alongside archaeology and the ancient Near East: Saul, David, and Solomon; the Exodus; Joshua and the conquest; Judah in the eighth century.</p></div>
