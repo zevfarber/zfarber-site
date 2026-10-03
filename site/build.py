@@ -271,7 +271,7 @@ ab += paper(
 <p>Rabbinic ordination (<em>yoreh yoreh</em>), Yeshivat Chovevei Torah.</p>
 <p>Advanced ordination (<em>yadin yadin</em>), Yeshivat Chovevei Torah.</p>
 </div>'''),
-    section('Press', 'Coverage and discussion', render_list(parse('media'), two_col=True), '<p>Reporting on my work and on TheTorah.com, and academic discussion of both.</p>'))
+    section('Press', 'Coverage and discussion', render_list(parse('media'), two_col=True)))
 ab += actions('Contact', 'Write to me', ('Write to me', 'contact.html'),
               [('Speaking', 'speaking.html'), ('Consulting', 'consulting.html'), ('Books', 'books.html')],
               note='For speaking, consultation, press, Prisma, the Atlas, or the books.')
