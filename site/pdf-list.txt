@@ -1,0 +1,18 @@
+# old Wix URL -> new path (download each, save under dist/pdf/)
+https://www.zfarber.com/_files/ugd/8598b9_1a8610e66e4245b9ae9a0463a9b93fac.pdf -> dist/pdf/Metzitzah-be-Peh-and-Protecting-Jewish-Infants.pdf
+https://www.zfarber.com/_files/ugd/8598b9_38f328f238bd430f8eb6df74c8565019.pdf -> dist/pdf/Tefillin-and-Clean-Bodies-Part-1-Elishas-Wings.pdf
+https://www.zfarber.com/_files/ugd/8598b9_48121979c428419b8c780823a382893a.pdf -> dist/pdf/Morethodoxy-The-Challenge-of-Biblical-Criticism-Dogma-vs-Faith.pdf
+https://www.zfarber.com/_files/ugd/8598b9_4c33975c1d27423fafa4d255bfe4e33a.pdf -> dist/pdf/God-Consciousness-and-the-Problem-of-Anthropopathism.pdf
+https://www.zfarber.com/_files/ugd/8598b9_67002cf2feb447c9a13cd1e61e4f918e.pdf -> dist/pdf/Homosexuals-in-the-Orthodox-Community.pdf
+https://www.zfarber.com/_files/ugd/8598b9_799f46d8526e4a36bb77a97fdade37c2.pdf -> dist/pdf/Tefillin-and-Clean-Bodies-Part-2-Women-and-Tefillin.pdf
+https://www.zfarber.com/_files/ugd/8598b9_b27a5c7b868a4adebe41840ce0fb0cd1.pdf -> dist/pdf/Desexualizing-Public-Space.pdf
+https://www.zfarber.com/_files/ugd/8598b9_b4422dffa39d4c0daff21755d9f014e2.pdf -> dist/pdf/Obamas-Advocacy-of-Gay-Marriage-An-Alternative-Orthodox-Response.pdf
+https://www.zfarber.com/_files/ugd/8598b9_b4d7e4ddf0cc46e3b59dc138d5c6f624.pdf -> dist/pdf/Womens-Participation-in-Ritual-Time-for-a-Paradigm-Shift.pdf
+https://www.zfarber.com/_files/ugd/8598b9_b92d9033639d4f5f98cf3cd9acb88c84.pdf -> dist/pdf/Alternative-Berakhot-for-Womens-Torah-Reading-Article.pdf
+https://www.zfarber.com/_files/ugd/8598b9_c71aba101cf34937911898b96142478f.pdf -> dist/pdf/Frum-Bridalplasty-On-Shidduch-Dating-and-Bean-Counting.pdf
+https://www.zfarber.com/_files/ugd/8598b9_cb52f15836de45b4b2dbd576ab46cf28.pdf -> dist/pdf/No-Agunah-Left-Behind-A-Proposal-to-Solve-the-Agunah-Crisis.pdf
+https://www.zfarber.com/_files/ugd/8598b9_e1e247d8510e46caa1959e0e240e4f64.pdf -> dist/pdf/Partnership-Minyanim-A-Follow-Up.pdf
+https://www.zfarber.com/_files/ugd/8598b9_e736761a233d466aa03e87751b875f5a.pdf -> dist/pdf/Davening-Among-the-Loyal-Order-of-Water-Buffaloes.pdf
+https://www.zfarber.com/_files/ugd/8598b9_f934353e57344a02a7229587d3437660.pdf -> dist/pdf/Transgender-Orthodox-Jews.pdf
+https://www.zfarber.com/_files/ugd/8598b9_f94d387d034a40aea5a8386f4643eaeb.pdf -> dist/pdf/Hiding-Sexual-Abuse-A-Lesson-from-Rabbi-Rosenbergs-Big-Shofar.pdf
+https://www.zfarber.com/_files/ugd/8598b9_f9af04ed687649d49780b302e9711231.pdf -> dist/pdf/Partnership-Minyanim-A-Defense-and-Encomium.pdf
