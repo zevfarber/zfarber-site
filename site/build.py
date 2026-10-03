@@ -122,14 +122,14 @@ PRISMA_BLOCK = f'''<article class="proj prisma">
   <div class="logo"><img src="img/prisma-logo.png" alt="Prisma"></div>
   <div class="role">Founder and Director</div>
   <h3>Prisma</h3>
-  <p>Teachers from the world's religions, for people who want to learn from them without joining them. A podcast, a journal, and a growing library.</p>
+  <p>Tap the wisdom of world religion. Skip the dogma. Guided by world-recognized experts, we offer a safe, non-proselytizing space to explore diverse traditions and find the frameworks that speak to you.</p>
   <div class="proj-acts"><a class="btn small" href="{LINKS['prisma_list']}">Join the mailing list</a><a class="btn small" href="{LINKS['prisma_journal']}">Subscribe to the Journal</a><a class="more" href="https://prisma.guide">prisma.guide →</a></div>
 </article>'''
 TORAH_BLOCK = f'''<article class="proj thetorah">
   <div class="logo"><img src="img/thetorah-logo-white.svg" alt="TheTorah.com"></div>
   <div class="role">Senior Editor and Fellow</div>
   <h3>TheTorah.com</h3>
-  <p>Academic study of the Torah for a religious readership, with essays by hundreds of scholars. I have edited the site for over a decade and write for it regularly.</p>
+  <p>Our mission is to make academic biblical scholarship accessible and engaging to readers from all backgrounds.</p>
   <div class="proj-acts"><a class="btn small" href="{LINKS['torah_news']}">Get the newsletter</a><a class="more" href="{LINKS['torah_author']}">My essays →</a></div>
 </article>'''
 
@@ -137,7 +137,7 @@ ATLAS_BAND = f'''<section class="atlas band"><div class="wrap">
   <div>
     <div class="label">In development</div>
     <h2>HolyLand Historical Atlas</h2>
-    <p>An interactive, trilingual historical atlas of the land, built by Jewish and Arab scholars together, from the ancient period to the present.</p>
+    <p>An interactive, trilingual historical atlas of the land, from the ancient period to the present, to be built by scholars of all backgrounds.</p>
   </div>
   <div class="ask">
     <div class="label">Looking for</div>
@@ -219,9 +219,9 @@ TILE = lambda img: f'style="background-image:linear-gradient(0deg,rgba(0,0,0,.85
 PROJECTS = f'''<section class="band projects-band"><div class="wrap">
   <div class="label">Projects</div>
   <div class="prows">
-    {prow(TILE('lectorium.jpg'), 'App · in beta', 'Lectorium', 'Reading app · in beta', "Read the world's classic texts in their original languages, with the apparatus carrying whatever the reader cannot yet. Grimm and Perrault, Homer and Ovid, the Daodejing, Hammurabi, Beowulf, and more.", '', '', linked=False)}
+    {prow(TILE('lectorium.jpg'), 'App · in beta', 'Lectorium', 'Reading app · in beta', "Read the world's classic myths, stories, and wisdom texts in their original languages, with the apparatus carrying whatever the reader cannot yet.", '', '', linked=False)}
     {prow(TILE('paintedwolf.jpg'), 'Publisher', 'Painted Wolf Adventure Classics', 'Painted Wolf · publisher', 'Complete works of classic adventure authors, with comprehensive author bio and survey of works, reprinted with easy-to-read modern formatting, beginning with H. Rider Haggard.', 'Browse the series', LINKS['paintedwolf'])}
-    {prow(TILE('udemy.jpg'), 'Course', 'Developmental Editing', 'Udemy · video course', 'Developmental editing, mainly for non-fiction, for editors and for writers editing their own work.', 'Buy on Udemy', LINKS['udemy'])}
+    {prow(TILE('udemy.jpg'), 'Course', 'Developmental Editing', 'Udemy · video course', 'Developmental editing for editors and writers, mainly for non-fiction.', 'Buy on Udemy', LINKS['udemy'])}
     {prow(TILE('zevtime.jpg'), 'Podcast', 'Zevtime Stories', 'Spotify · bedtime stories', "I have six kids. I read all of them the same bedtime stories: Oz, Winnie the Pooh, Alice in Wonderland, and other classics. Now my children are older and are having children of their own, so I am doing one more set of reading, for all my grandchildren now and to come, and any other children who wish to listen and enjoy these fun stories the way my kids did.", 'Listen on Spotify', LINKS['zevtime'])}
   </div>
 </div></section>'''
@@ -279,13 +279,13 @@ pages['about.html'] = ('About · Zev Farber', ab)
 
 # ---------- BIBLE ----------
 b = page_header('Bible', 'Essays on the <em>Hebrew Bible</em>',
-    f'Most of these appeared at <a href="{LINKS["torah_author"]}">TheTorah.com</a>; academic papers are on Academia.edu; a few pieces are in Hebrew at the Hartman Institute blog. Grouped by book and by subject.', photo='bible', box=TORAH_SIG)
+    photo='bible', box=TORAH_SIG)
 b += proj_band(TORAH_BLOCK)
 b += paper(
     section('Torah', 'Genesis to Deuteronomy', render_list(parse('torah'))),
-    section('Joshua and Judges', 'Joshua and Judges', render_list(parse('joshua-judges')), f'<p>The subject of my doctoral work and of <a href="{LINKS["joshua"]}"><em>Images of Joshua in the Bible and Their Reception</em></a>.</p>'),
+    section('Joshua and Judges', 'Joshua and Judges', render_list(parse('joshua-judges'))),
     section('Holidays', 'The festivals', render_list(parse('holidays'))),
-    section('Theology', 'Torah, history, and belief', render_list(parse('theology')), '<p>What "Torah from heaven" can mean for a reader who accepts that the Torah has a history. Start with <a href="https://www.thetorah.com/article/torah-is-from-heaven-what-do-we-really-mean">Torah is From Heaven: What Do We Mean?</a></p>'),
+    section('Theology', 'Torah, history, and belief', render_list(parse('theology'))),
     section('Education', 'Teaching Torah with the scholarship in view', render_list(parse('education'))),
     section('Academic', 'Articles, chapters, edited volumes, and reference works', render_list(parse('academic-bible')), '<p>Peer-reviewed articles and book chapters, two journal volumes I edited, and entries in reference works. Items without a link are in print only.</p>'),
     section('My Jewish Learning', 'Shorter pieces', render_list(parse('mjl')), '<p>Short essays written for <a href="https://www.myjewishlearning.com/author/rabbi-dr-zev-farber/">My Jewish Learning</a>.</p>'))
@@ -296,7 +296,7 @@ pages['bible.html'] = ('Bible · Zev Farber', b)
 
 # ---------- HALAKHA ----------
 h = page_header('Halakha', 'Jewish <em>law</em>',
-    'Twenty years of writing on halakha: medical ethics, the status of women, LGBTQ Jews, conversion, and responsa for Jewish Values Online. Some pieces below are PDFs of articles first published elsewhere.', photo='halakha')
+    photo='halakha')
 h += paper(
     section('Books', 'Three books', f'''<div class="books">
   <article class="book">{cover(LINKS['homosexuality'], 'cover-homosexuality.jpg', 'Homosexual Relationships and Orthodox Judaism')}<div><h3><a href="{LINKS['homosexuality']}">Homosexual Relationships and Orthodox Judaism</a></h3><div class="meta">Painted Wolf · 2026</div></div></article>
@@ -336,7 +336,7 @@ r += actions('Next', 'Watch, join, or talk it through', ('Watch the channel', LI
 pages['religion.html'] = ('Religion · Zev Farber', r)
 
 # ---------- FICTION ----------
-f_ = page_header('Z. I. Farber', 'Fiction', 'Crime novels and stories, published under the name Z.&nbsp;I.&nbsp;Farber. Paperback and Kindle.', photo='fiction')
+f_ = page_header('Z. I. Farber', 'Fiction', photo='fiction')
 fic_items = parse('fiction-2')
 FIC_COVERS = {'Two Wrongs': 'cover-twowrongs.jpg', 'Doing What It Takes': 'cover-doing.jpg', 'The Airplane Predator': 'cover-airplane.jpg'}
 f_ += '<section class="band"><div class="wrap"><div class="fiction">'
@@ -353,11 +353,11 @@ for it in fic_items:
 if cur: f_ += '</div></article>'
 f_ += '</div></div></section>'
 f_ += actions('Next', 'Book clubs', ('Book a video meeting', 'contact.html'), [('All books', 'books.html')],
-              note='Video meetings with book clubs reading the novels. Discussion material for clubs available upon request.')
+              note='Video meetings with book clubs. Discussion material for clubs available upon request.')
 pages['fiction.html'] = ('Fiction · Z. I. Farber', f_)
 
 # ---------- BOOKS ----------
-bk = page_header('Books', 'Books, and <em>other things I made</em>', 'Biblical history and Jewish law under my own name; fiction as Z.&nbsp;I.&nbsp;Farber; a course on editing; Lectorium, a reading app in beta; and Painted Wolf, a press for classic adventure fiction.', photo='books')
+bk = page_header('Books', 'Books and <em>other projects</em>', 'Biblical history and Jewish law under my own name; fiction as Z.&nbsp;I.&nbsp;Farber; a course on editing; Lectorium, a reading app in beta; and Painted Wolf, a press for classic adventure fiction.', photo='books')
 def book(href, img, title, meta, verb='Buy', extra=''):
     t = f'<a href="{href}">{title}</a>' if href else title
     cov = cover(href, img, title) if img and href else (f'<div class="cover tile soon"><small>{esc(extra or "Forthcoming")}</small></div>' if not img else f'<div class="cover"><img src="img/{img}" alt="{esc(title)}"></div>')
@@ -377,8 +377,8 @@ bk += paper(
         book(LINKS['doing'], 'cover-doing.jpg', 'Doing What It Takes', 'Novel · paperback and Kindle') +
         book(LINKS['airplane'], 'cover-airplane.jpg', 'The Airplane Predator', 'Short story · Kindle') + '</div>', '<p><a href="fiction.html">Descriptions →</a></p>'),
     section('Also', 'A course, an app, and a press', '<div class="books">' +
-        f'<article class="book"><a class="cover tile pw" href="{LINKS["udemy"]}" style="background-image:linear-gradient(0deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,.35) 45%,rgba(0,0,0,0) 70%),url(img/udemy.jpg)"><small>Course</small>Developmental Editing</a><div><h3><a href="{LINKS["udemy"]}">Developmental Editing: How to Find the Narrative Arc</a></h3><div class="meta">Udemy · video course</div><p>Developmental editing, mainly for non-fiction, for editors and for writers editing their own work.</p><a class="btn small" href="{LINKS["udemy"]}">Buy on Udemy</a></div></article>' +
-        f'<article class="book"><span class="cover tile pw" style="background-image:linear-gradient(0deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.45) 45%,rgba(20,22,30,.25) 100%),url(img/lectorium.jpg)"><small>App · in beta</small>Lectorium</span><div><h3>Lectorium</h3><div class="meta">Reading app · in beta</div><p>Read the world\'s classic texts in their original languages, with the apparatus carrying whatever the reader cannot yet. Grimm and Perrault, Homer and Ovid, the Daodejing, Hammurabi, Beowulf, and more.</p></div></article>' +
+        f'<article class="book"><a class="cover tile pw" href="{LINKS["udemy"]}" style="background-image:linear-gradient(0deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,.35) 45%,rgba(0,0,0,0) 70%),url(img/udemy.jpg)"><small>Course</small>Developmental Editing</a><div><h3><a href="{LINKS["udemy"]}">Developmental Editing: How to Find the Narrative Arc</a></h3><div class="meta">Udemy · video course</div><p>Developmental editing for editors and writers, mainly for non-fiction.</p><a class="btn small" href="{LINKS["udemy"]}">Buy on Udemy</a></div></article>' +
+        f'<article class="book"><span class="cover tile pw" style="background-image:linear-gradient(0deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.45) 45%,rgba(20,22,30,.25) 100%),url(img/lectorium.jpg)"><small>App · in beta</small>Lectorium</span><div><h3>Lectorium</h3><div class="meta">Reading app · in beta</div><p>Read the world\'s classic myths, stories, and wisdom texts in their original languages, with the apparatus carrying whatever the reader cannot yet.</p></div></article>' +
         f'<article class="book"><a class="cover tile pw" href="{LINKS["paintedwolf"]}" style="background-image:linear-gradient(0deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,.35) 45%,rgba(0,0,0,0) 70%),url(img/paintedwolf.jpg)"><small>Publisher</small>Painted Wolf</a><div><h3><a href="{LINKS["paintedwolf"]}">Painted Wolf Adventure Classics</a></h3><div class="meta">Painted Wolf · publisher</div><p>Complete works of classic adventure authors, with comprehensive author bio and survey of works, reprinted with easy-to-read modern formatting, beginning with H. Rider Haggard.</p><a class="btn small" href="{LINKS["paintedwolf"]}">Browse the series</a></div></article>' + '</div>'))
 pages['books.html'] = ('Books · Zev Farber', bk)
 
@@ -413,15 +413,13 @@ co += paper('''<section class="block"><div class="wrap"><div class="sec-head"><d
   <p>People working out their religious or theological beliefs, or in a religious quandary, who want to talk it through with someone who has been through it himself.</p>
   <h3>What it is</h3>
   <p>Serious, unhurried time, by appointment, in person or online. Text study where it helps. No fixed program.</p>
-  <h3>Background</h3>
-  <p>A Ph.D. in Hebrew Bible, rabbinic ordination, and many years of working these questions out for myself.</p>
   <h3>How to begin</h3>
   <p><a href="contact.html">Write to me</a> with a few lines about what you are thinking through.</p>
 </div></div></div></section>''')
 pages['consulting.html'] = ('Consulting · Zev Farber', co)
 
 # ---------- CONTACT ----------
-ct = page_header('Contact', 'Write <em>to me</em>', 'For speaking, scholar-in-residence weekends, press, Prisma partnerships, the Atlas, consultation, readings, or the books.', photo='contact')
+ct = page_header('Contact', 'Write <em>to me</em>', photo='contact')
 ct += '''<div class="paper"><section class="block contact"><div class="wrap">
   <div><div class="label">Elsewhere</div><p class="links">''' + '<br>'.join(f'<a href="{u}">{n}</a>' for n, u in SOCIAL + [('TheTorah.com', LINKS['torah_author']), ('Prisma', 'https://prisma.guide')]) + '''</p></div>
   <form name="contact" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
@@ -436,7 +434,7 @@ pages['contact.html'] = ('Contact · Zev Farber', ct)
 
 # ---------- THANKS / 404 ----------
 pages['thanks.html'] = ('Thank you · Zev Farber', page_header('Sent', 'Thank <em>you</em>', 'Your message is on its way. I read everything and answer what I can.', photo='contact') + '<div class="paper"><section class="block"><div class="wrap"><p><a class="more" href="index.html">Back to the site →</a></p></div></section></div>')
-pages['404.html'] = ('Page not found · Zev Farber', page_header('404', 'No such <em>page</em>', 'That address is from the old site, or mistyped.', photo='books') + '<div class="paper"><section class="block"><div class="wrap"><p><a class="more" href="index.html">Home →</a> &nbsp; <a class="more" href="bible.html">Bible →</a> &nbsp; <a class="more" href="halakha.html">Halakha →</a> &nbsp; <a class="more" href="books.html">Books →</a></p></div></section></div>')
+pages['404.html'] = ('Page not found · Zev Farber', page_header('404', 'No such <em>page</em>', photo='books') + '<div class="paper"><section class="block"><div class="wrap"><p><a class="more" href="index.html">Home →</a> &nbsp; <a class="more" href="bible.html">Bible →</a> &nbsp; <a class="more" href="halakha.html">Halakha →</a> &nbsp; <a class="more" href="books.html">Books →</a></p></div></section></div>')
 
 # ---------- write ----------
 BODY_CLASS = {'fiction.html': 'noir'}
