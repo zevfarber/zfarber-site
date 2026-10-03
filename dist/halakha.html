@@ -173,6 +173,27 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 .phead-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;filter:saturate(.8) contrast(1.05)}
 .phead-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--black) 0%,rgba(12,13,16,.3) 20%,rgba(12,13,16,0) 50%),linear-gradient(0deg,var(--black) 0%,rgba(12,13,16,0) 28%)}
 .proj-top{padding-block:clamp(36px,5vw,64px) 0}
+/* ---- about: collage of work in the header ---- */
+.pbox-wrap:has(> .collage){align-self:stretch}
+.collage{position:relative;width:100%;max-width:720px;aspect-ratio:4/3}
+.collage .c{position:absolute;left:var(--x);top:var(--y);width:var(--w);z-index:var(--z);transform:rotate(var(--r));box-shadow:0 12px 28px rgba(0,0,0,.55);transition:transform .2s}
+.collage .c:hover{transform:rotate(0) scale(1.04);z-index:20}
+.collage .c img{width:100%;height:auto}
+.collage .card{background:var(--black-3);border:1px solid var(--line-d);padding:4% 5%}
+.collage .logo{box-shadow:none}
+.collage .word{aspect-ratio:2/1;display:flex;align-items:flex-end;padding:6%;background-position:center;background-size:cover;border:1px solid var(--line-d)}
+.collage .word.tall{aspect-ratio:2/3}
+.collage .word span{font-family:var(--sans);font-size:clamp(9px,.8vw,11px);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--white-2)}
+.collage .atlas{padding:3.5% 6%;border-left:3px solid var(--gold)}
+.collage .atlas span{font-family:var(--serif);font-size:clamp(12px,1.25vw,18px);line-height:1.15;color:var(--white)}
+.statement p{font-family:var(--serif);font-size:clamp(20px,1.8vw,24px);line-height:1.45;max-width:60ch;margin:0 0 .8em}
+.statement p:first-child{font-size:clamp(26px,2.6vw,36px);line-height:1.2}
+@media (prefers-reduced-motion:reduce){.collage .c{transition:none}}
+/* ---- framed picture beside the header photo (fiction, speaking) ---- */
+.side-img{max-width:380px;margin:0}
+.side-img img{width:100%;height:auto;filter:saturate(.85);box-shadow:0 18px 40px rgba(0,0,0,.6)}
+.noir .side-img img{filter:grayscale(1) contrast(1.05)}
+.side-img figcaption{margin-top:12px;font-family:var(--sans);font-size:12px;letter-spacing:.06em;color:var(--white-3)}
 
 /* ---- paper body ---- */
 .paper{background:var(--paper);color:var(--ink)}
@@ -396,7 +417,7 @@ footer a:hover{color:var(--white)}
 <div><div class="label">Next</div><h2>Buy <em>Homosexual Relationships and Orthodox Judaism</em></h2></div>
 <div class="act-btns"><a class="btn primary" href="https://www.amazon.com/dp/B0HLL5H786">Buy the book</a><a class="act-link" href="https://www.amazon.com/dp/1592644066">Halakhic Realities volumes →</a><a class="act-link" href="speaking.html">Book a lecture →</a></div>
 </div></div></section>
-<footer><div class="wrap"><span>© 2026 Zev I. Farber · <a href="contact.html">Contact</a> · <a href="speaking.html">Speaking</a> · <a href="consulting.html">Consulting</a> · <a href="books.html">Books</a> · Photographs by Tamar Hersko</span><span class="soc"><a href="https://il.linkedin.com/in/zev-farber-3a9a586b">LinkedIn</a> · <a href="https://www.facebook.com/Zev.Israel.Farber/">Facebook</a> · <a href="https://twitter.com/FarberZev">X / Twitter</a> · <a href="https://www.youtube.com/@zev.i.farber">YouTube</a></span></div></footer>
+<footer><div class="wrap"><span>© 2026 Zev I. Farber · <a href="contact.html">Contact</a> · <a href="speaking.html">Speaking</a> · <a href="consulting.html">Consulting</a> · <a href="books.html">Books</a> · Portraits by Tamar Hersko</span><span class="soc"><a href="https://il.linkedin.com/in/zev-farber-3a9a586b">LinkedIn</a> · <a href="https://www.facebook.com/Zev.Israel.Farber/">Facebook</a> · <a href="https://twitter.com/FarberZev">X / Twitter</a> · <a href="https://www.youtube.com/@zev.i.farber">YouTube</a></span></div></footer>
 </div>
 </body>
 </html>

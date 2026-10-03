@@ -68,7 +68,7 @@ def shell(page, title, body, fragment=False, body_class=''):
 {wrapper_open}
 <nav><div class="wrap"><a class="brand" href="index.html">Zev I. Farber</a><div class="menu">{nav}</div></div></nav>
 {body}
-<footer><div class="wrap"><span>© 2026 Zev I. Farber · <a href="contact.html">Contact</a> · <a href="speaking.html">Speaking</a> · <a href="consulting.html">Consulting</a> · <a href="books.html">Books</a> · Photographs by Tamar Hersko</span><span class="soc">{social}</span></div></footer>
+<footer><div class="wrap"><span>© 2026 Zev I. Farber · <a href="contact.html">Contact</a> · <a href="speaking.html">Speaking</a> · <a href="consulting.html">Consulting</a> · <a href="books.html">Books</a> · Portraits by Tamar Hersko</span><span class="soc">{social}</span></div></footer>
 </div>'''
     if fragment:
         return doc
@@ -258,12 +258,37 @@ pages['index.html'] = ('Zev Farber', f'''
 ''')
 
 # ---------- ABOUT ----------
-ab = page_header('Rabbi · Ph.D. · Dayan', 'Zev I. Farber', '', photo='about')
+# Zev's statement about himself; the section is left out until this is filled in.
+ABOUT_STATEMENT = [
+    "I find the story and look for the solution that isn't supposed to be there.",
+    "Most problems come with boundaries already drawn: what can be questioned, which answers count, which possibilities are too uncomfortable or taboo to consider. I look for the story that drew those boundaries—and reframe it so other answers become possible.",
+]
+
+def cl(href, inner, x, y, w, r, z, cls='', bg=''):
+    """One collage piece: position/size in % of the collage box, rotation in degrees."""
+    bg_css = f";background-image:linear-gradient(0deg,rgba(0,0,0,.6),rgba(0,0,0,0) 50%),url(img/{bg})" if bg else ''
+    return f'<a class="c {cls}" href="{esc(href)}" style="--x:{x}%;--y:{y}%;--w:{w}%;--r:{r}deg;--z:{z}{bg_css}">{inner}</a>'
+CIMG = lambda img, alt: f'<img src="img/{img}" alt="{esc(alt)}">'
+COLLAGE = '<div class="collage">' + ''.join([
+    # top row
+    cl('books.html', CIMG('cover-firstkings.jpg', "The Bible's First Kings"), 3, 37, 14, -2, 2),
+    cl('books.html', CIMG('cover-joshua.jpg', 'Images of Joshua in the Bible and Their Reception'), 40, 66, 14, 2, 2),
+    cl(LINKS['torah_author'], CIMG('thetorah-logo-white.svg', 'TheTorah.com'), 37, 12, 26, 0, 3, 'logo'),
+    cl('books.html', CIMG('cover-homosexuality.jpg', 'Homosexual Relationships and Orthodox Judaism'), 67, 2, 14, 2, 2),
+    cl('books.html', CIMG('cover-twowrongs.jpg', 'Two Wrongs'), 84, 5, 14, -2, 2),
+    # middle row, Prisma in the center
+    cl('https://prisma.guide', CIMG('prisma-logo.png', 'Prisma'), 34, 42, 34, 0, 5, 'logo'),
+    cl(LINKS['paintedwolf'], CIMG('paintedwolf-logo.png', 'Painted Wolf'), 73, 42, 17, 0, 2, 'logo'),
+    # bottom row
+    cl('books.html', '<span>Lectorium</span>', 2, 71, 26, -1, 2, 'word', 'lectorium.jpg'),
+    cl('israel.html', '<span>HolyLand Historical Atlas</span>', 5, 2, 22, -1, 3, 'card atlas'),
+    cl('books.html', CIMG('cover-organ.jpg', 'Halakhic Realities: Organ Donation'), 66, 68, 14, -2, 2),
+    cl('books.html', CIMG('cover-doing.jpg', 'Doing What It Takes'), 84, 66, 14, 2, 2),
+]) + '</div>'
+
+ab = page_header('Rabbi · Ph.D. · Dayan', 'Zev I. Farber', '', photo='fiction', box=COLLAGE)
 ab += paper(
-    section('Positions', 'Current work', f'''<div class="prose">
-<p><b>Prisma</b> — founder and director. A podcast, journal, and library of teaching from the world's religions. <a href="https://prisma.guide">prisma.guide</a></p>
-<p><b>TheTorah.com</b> — Senior Editor and Fellow, Academic Torah Institute. <a href="{LINKS['torah_author']}">Essays</a></p>
-</div>'''),
+    *(['<section class="block"><div class="wrap"><div class="statement prose">' + ''.join(f'<p>{esc(t)}</p>' for t in ABOUT_STATEMENT) + '</div></div></section>'] if ABOUT_STATEMENT else []),
     section('Education', 'Degrees and ordination', '''<div class="prose">
 <p>Ph.D., Emory University, Jewish Religious Cultures and Hebrew Bible.</p>
 <p>M.A., Hebrew University of Jerusalem, Jewish History (biblical period).</p>
@@ -336,7 +361,7 @@ r += actions('Next', 'Watch, join, or talk it through', ('Watch the channel', LI
 pages['religion.html'] = ('Religion · Zev Farber', r)
 
 # ---------- FICTION ----------
-f_ = page_header('Z. I. Farber', 'Fiction', photo='fiction')
+f_ = page_header('Z. I. Farber', 'Fiction', photo='about', box='<figure class="side-img"><img src="img/typewriter.jpg" alt=""></figure>')
 fic_items = parse('fiction-2')
 FIC_COVERS = {'Two Wrongs': 'cover-twowrongs.jpg', 'Doing What It Takes': 'cover-doing.jpg', 'The Airplane Predator': 'cover-airplane.jpg'}
 f_ += '<section class="band"><div class="wrap"><div class="fiction">'
@@ -383,7 +408,8 @@ bk += paper(
 pages['books.html'] = ('Books · Zev Farber', bk)
 
 # ---------- SPEAKING ----------
-sp = page_header('Speaking', 'Lectures, courses, and <em>scholar-in-residence weekends</em>', photo='speaking')
+sp = page_header('Speaking', 'Lectures, courses, and <em>scholar-in-residence weekends</em>', photo='speaking',
+    box='<figure class="side-img"><img src="img/speaking-talk.jpg" alt="Zev Farber speaking at a conference"><figcaption>Addressing the Hungarian Jewish Studies conference, Budapest, 2020</figcaption></figure>')
 sp += paper(
     section('Topics', 'What I talk about', '''<div class="topics">
   <div class="topic"><h3>The Bible in history</h3><p>What the Bible looks like when it is read alongside archaeology and the ancient Near East: Saul, David, and Solomon; the Exodus; Joshua and the conquest; Judah in the eighth century.</p></div>
