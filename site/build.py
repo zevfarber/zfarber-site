@@ -71,6 +71,7 @@ def shell(page, title, body, fragment=False, body_class=''):
 <nav><div class="wrap"><a class="brand" href="index.html">Zev I. Farber</a><div class="menu">{nav}</div></div></nav>
 {body}
 <footer><div class="wrap"><span>© 2026 Zev I. Farber · <a href="contact.html">Contact</a> · <a href="speaking.html">Speaking</a> · <a href="consulting.html">Consulting</a> · <a href="books.html">Books</a> · Portraits by <a href="https://www.tamarhersko.com/photography">Tamar Hersko</a></span><span class="soc">{social}</span></div></footer>
+<script>(function(){{var n=document.querySelector('nav'),y=window.scrollY;window.addEventListener('scroll',function(){{var c=window.scrollY;n.classList.toggle('nav-hide',c>y&&c>120);y=c}},{{passive:true}})}})();</script>
 </div>'''
     if fragment:
         return doc
@@ -455,7 +456,10 @@ pages['consulting.html'] = ('Consulting · Zev Farber', co)
 # ---------- CONTACT ----------
 ct = page_header('Contact', 'Write <em>to me</em>', photo='contact')
 ct += '''<div class="paper"><section class="block contact"><div class="wrap">
-  <div><div class="label">Elsewhere</div><p class="links">''' + '<br>'.join(f'<a href="{u}">{n}</a>' for n, u in SOCIAL + [('TheTorah.com', LINKS['torah_author']), ('Prisma', 'https://prisma.guide')]) + '''</p></div>
+  <div>
+    <div class="ways"><h3><a href="speaking.html">Speaking</a></h3><p class="muted">Lectures, courses, and scholar-in-residence weekends, in person or online. A note with the date, place, and audience is enough to start.</p><a class="more" href="speaking.html">Topics and details →</a></div>
+    <div class="ways"><h3><a href="consulting.html">Consulting</a></h3><p class="muted">Private conversations, by appointment, for people working out their religious or theological beliefs. A few lines about what you are thinking through is enough to start.</p><a class="more" href="consulting.html">More about consulting →</a></div>
+  </div>
   <form name="contact" method="POST" action="''' + FORMSPREE + '''">
     <input type="hidden" name="_subject" value="Message from zfarber.com"><input type="hidden" name="_next" value="https://zfarber.com/thanks.html"><input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
     <div class="two"><div class="field"><label for="fn">First name</label><input id="fn" name="first"></div><div class="field"><label for="ln">Last name</label><input id="ln" name="last"></div></div>

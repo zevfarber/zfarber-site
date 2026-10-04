@@ -262,6 +262,9 @@ section.block:last-child{border-bottom:none}
 .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px)}
 .contact .muted{color:var(--ink-2);max-width:48ch}
 .links{margin:6px 0 0;line-height:1.9}
+.ways+.ways{margin-top:32px;padding-top:28px;border-top:1px solid var(--rule)}
+.ways h3{font-size:28px;margin-bottom:10px}
+.ways p{margin:0 0 10px}
 form{display:grid;gap:14px}
 .field{display:grid;gap:6px}
 .field label{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--ink-2)}
@@ -302,13 +305,18 @@ footer a:hover{color:var(--white)}
   body{font-size:17px}
   .press{grid-template-columns:1fr}
   .two{grid-template-columns:1fr}
-  .menu{font-size:12px;gap:12px}
+  .menu{font-size:10.5px;gap:6px;letter-spacing:0}
+  .menu a.menu-cta{padding:6px 8px}
+  nav{transition:transform .25s}
+  nav.nav-hide{transform:translateY(-100%)}
   .cover{width:96px}
   .covers{flex-wrap:wrap}
   .novel{grid-template-columns:1fr}
   .novel .cover{width:150px}
 }
 @media (prefers-reduced-motion:reduce){.cover,.btn{transition:none}.cover:hover{transform:none}}
+
+@media (prefers-reduced-motion:reduce){nav{transition:none}}
 </style>
 </head>
 <body>
@@ -332,6 +340,7 @@ footer a:hover{color:var(--white)}
   </form>
 </div></section></div>
 <footer><div class="wrap"><span>© 2026 Zev I. Farber · <a href="contact.html">Contact</a> · <a href="speaking.html">Speaking</a> · <a href="consulting.html">Consulting</a> · <a href="books.html">Books</a> · Portraits by <a href="https://www.tamarhersko.com/photography">Tamar Hersko</a></span><span class="soc"><a href="https://il.linkedin.com/in/zev-farber-3a9a586b">LinkedIn</a> · <a href="https://www.facebook.com/Zev.Israel.Farber/">Facebook</a> · <a href="https://twitter.com/FarberZev">X / Twitter</a> · <a href="https://www.youtube.com/@zev.i.farber">YouTube</a></span></div></footer>
+<script>(function(){var n=document.querySelector('nav'),y=window.scrollY;window.addEventListener('scroll',function(){var c=window.scrollY;n.classList.toggle('nav-hide',c>y&&c>120);y=c},{passive:true})})();</script>
 </div>
 </body>
 </html>

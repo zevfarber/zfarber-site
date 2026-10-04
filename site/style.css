@@ -250,6 +250,9 @@ section.block:last-child{border-bottom:none}
 .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px)}
 .contact .muted{color:var(--ink-2);max-width:48ch}
 .links{margin:6px 0 0;line-height:1.9}
+.ways+.ways{margin-top:32px;padding-top:28px;border-top:1px solid var(--rule)}
+.ways h3{font-size:28px;margin-bottom:10px}
+.ways p{margin:0 0 10px}
 form{display:grid;gap:14px}
 .field{display:grid;gap:6px}
 .field label{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--ink-2)}
@@ -290,10 +293,15 @@ footer a:hover{color:var(--white)}
   body{font-size:17px}
   .press{grid-template-columns:1fr}
   .two{grid-template-columns:1fr}
-  .menu{font-size:12px;gap:12px}
+  .menu{font-size:10.5px;gap:6px;letter-spacing:0}
+  .menu a.menu-cta{padding:6px 8px}
+  nav{transition:transform .25s}
+  nav.nav-hide{transform:translateY(-100%)}
   .cover{width:96px}
   .covers{flex-wrap:wrap}
   .novel{grid-template-columns:1fr}
   .novel .cover{width:150px}
 }
 @media (prefers-reduced-motion:reduce){.cover,.btn{transition:none}.cover:hover{transform:none}}
+
+@media (prefers-reduced-motion:reduce){nav{transition:none}}
