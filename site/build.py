@@ -323,7 +323,7 @@ pages['bible.html'] = ('Bible · Zev Farber', b)
 h = page_header('Halakha', 'Jewish <em>law</em>',
     photo='halakha')
 h += paper(
-    section('Books', 'Three books', f'''<div class="books">
+    section('', 'Books', f'''<div class="books">
   <article class="book">{cover(LINKS['homosexuality'], 'cover-homosexuality.jpg', 'Homosexual Relationships and Orthodox Judaism')}<div><h3><a href="{LINKS['homosexuality']}">Homosexual Relationships and Orthodox Judaism</a></h3><div class="meta">Painted Wolf · 2026</div></div></article>
   <article class="book">{cover(LINKS['brain'], 'cover-brain.jpg', 'Halakhic Realities: Brain Death')}<div><h3><a href="{LINKS['brain']}">Halakhic Realities: Collected Essays on Brain Death</a></h3><div class="meta">Maggid · editor</div></div></article>
   <article class="book">{cover(LINKS['organ'], 'cover-organ.jpg', 'Halakhic Realities: Organ Donation')}<div><h3><a href="{LINKS['organ']}">Halakhic Realities: Collected Essays on Organ Donation</a></h3><div class="meta">Maggid · editor</div></div></article>
