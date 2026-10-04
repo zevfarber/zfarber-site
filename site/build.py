@@ -109,13 +109,14 @@ def page_header(label, h1, lead='', photo=None, box=''):
     box_html = f'<div class="pbox-wrap">{box}</div>' if box else ''
     return f'<header class="phead{" has-box" if box else ""}"><div class="phead-text">{box_html}<div class="phead-bottom"><div class="label">{esc(label)}</div><h1>{h1}</h1>{lead_html}</div></div>{photo_html}</header>'
 
-def actions(label, h2, primary, secondary=(), note=''):
-    """Dark closing strip. primary=(text, href); secondary=[(text, href)]. Verbs only."""
+def actions(label, h2, primary, secondary=(), note='', book=None):
+    """Dark closing strip. primary=(text, href); secondary=[(text, href)]. Verbs only. book=(href, img, title) adds a cover."""
     t, h = primary
     sec = ''.join(f'<a class="act-link" href="{esc(u)}">{esc(x)} →</a>' for x, u in secondary)
     note_html = f'<p class="act-note">{note}</p>' if note else ''
+    text = f'<div><div class="label">{esc(label)}</div><h2>{h2}</h2>{note_html}</div>'
     return f'''<section class="actions"><div class="wrap"><div class="act">
-<div><div class="label">{esc(label)}</div><h2>{h2}</h2>{note_html}</div>
+{text if not book else f'<div class="act-main">{cover(*book)}{text}</div>'}
 <div class="act-btns"><a class="btn primary" href="{esc(h)}">{esc(t)}</a>{sec}</div>
 </div></div></section>'''
 
@@ -320,7 +321,8 @@ b += paper(
     section('My Jewish Learning', 'Shorter pieces', render_list(parse('mjl')), '<p>Short essays written for <a href="https://www.myjewishlearning.com/author/rabbi-dr-zev-farber/">My Jewish Learning</a>.</p>'))
 b += actions('Next', "Buy <em>The Bible's First Kings</em>", ("Buy The Bible's First Kings", LINKS['first_kings']),
              [('Get the TheTorah.com newsletter', LINKS['torah_news']), ('Book a lecture', 'speaking.html')],
-             note='Uncovering the story of Saul, David, and Solomon, with Avraham Faust. Cambridge University Press, 2025.')
+             note='Uncovering the story of Saul, David, and Solomon, with Avraham Faust. Cambridge University Press, 2025.',
+             book=(LINKS['first_kings'], 'cover-firstkings.jpg', "The Bible's First Kings"))
 pages['bible.html'] = ('Bible · Zev Farber', b)
 
 # ---------- HALAKHA ----------
