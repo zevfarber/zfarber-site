@@ -257,6 +257,9 @@ pages['index.html'] = ('Zev Farber', f'''
 {HIRE}
 ''')
 
+# Forms are handled by Formspree (free tier). Put the form endpoint here once the account exists.
+FORMSPREE = 'https://formspree.io/f/moevggwk'
+
 # ---------- ABOUT ----------
 # Zev's statement about himself; the section is left out until this is filled in.
 ABOUT_STATEMENT = [
@@ -355,7 +358,7 @@ r += proj_band(PRISMA_BLOCK)
 r += paper(
     section('', 'Prisma Talks', '<ul class="arch"><li><a href="https://www.youtube.com/watch?v=ID345_Hxmbk">Introduction to Judaism</a><small>Prisma Guide, YouTube</small></li><li><a href="https://www.youtube.com/watch?v=BJjUWywqcqM">Founder\'s Statement</a><small>Prisma Guide, YouTube</small></li></ul>'),
     section('', 'Thinking Out Loud about Synergistic Religion', render_list(parse('religion-youtube'), two_col=False), f'<p><a href="{LINKS["youtube"]}">The channel →</a></p>'),
-    section('', 'Theology', '<ul class="arch"><li><a href="https://www.thetorah.com/article/torah-is-from-heaven-what-do-we-really-mean">Torah is From Heaven: What Do We Mean?</a><small>TheTorah.com, 2019</small></li><li><a href="https://www.thetorah.com/series/avraham-avinu-is-my-father-thoughts-on-torah-history-and-judaism">Avraham Avinu is My Father: Thoughts on Torah, History, and Judaism</a><small>TheTorah.com series</small></li><li><a href="/pdf/God-Consciousness-and-the-Problem-of-Anthropopathism.pdf">God, Consciousness, and the Problem of Anthropopathism</a><small>PDF</small></li></ul>'))
+    section('', 'Theology', '<ul class="arch"><li><a href="https://www.thetorah.com/article/torah-is-from-heaven-what-do-we-really-mean">Torah is From Heaven: What Do We Mean?</a><small>TheTorah.com, 2019</small></li><li><a href="https://www.thetorah.com/series/avraham-avinu-is-my-father-thoughts-on-torah-history-and-judaism">Avraham Avinu is My Father: Thoughts on Torah, History, and Judaism</a><small>TheTorah.com series</small></li><li><a href="pdf/God-Consciousness-and-the-Problem-of-Anthropopathism.pdf">God, Consciousness, and the Problem of Anthropopathism</a><small>PDF</small></li></ul>'))
 r += actions('Next', 'Watch, join, or talk it through', ('Watch the channel', LINKS['youtube']),
              [('Join the Prisma mailing list', LINKS['prisma_list']), ('Book a lecture', 'speaking.html'), ('Talk something through', 'consulting.html')])
 pages['religion.html'] = ('Religion · Zev Farber', r)
@@ -421,8 +424,8 @@ sp += paper(
 </div>'''),
     '''<section class="block contact"><div class="wrap">
   <div><div class="label">Inquiries</div><h2 class="h2">About an event</h2><p class="muted">If you are planning a program, a note with the date, place, and audience is enough to start. Talks can be shaped to the room. A one-page bio, a print-quality photo, and a short introduction for the host are available on request.</p></div>
-  <form name="speaking" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
-    <input type="hidden" name="form-name" value="speaking"><p hidden><label>Leave this empty: <input name="bot-field"></label></p>
+  <form name="speaking" method="POST" action="''' + FORMSPREE + '''">
+    <input type="hidden" name="_subject" value="Speaking inquiry from zfarber.com"><input type="hidden" name="_next" value="https://zfarber.com/thanks.html"><input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
     <div class="two"><div class="field"><label for="sname">Name</label><input id="sname" name="name"></div><div class="field"><label for="sorg">Organization</label><input id="sorg" name="org"></div></div>
     <div class="field"><label for="semail">Email</label><input id="semail" name="email" type="email"></div>
     <div class="field"><label for="smsg">About the event</label><textarea id="smsg" name="message"></textarea></div>
@@ -448,8 +451,8 @@ pages['consulting.html'] = ('Consulting · Zev Farber', co)
 ct = page_header('Contact', 'Write <em>to me</em>', photo='contact')
 ct += '''<div class="paper"><section class="block contact"><div class="wrap">
   <div><div class="label">Elsewhere</div><p class="links">''' + '<br>'.join(f'<a href="{u}">{n}</a>' for n, u in SOCIAL + [('TheTorah.com', LINKS['torah_author']), ('Prisma', 'https://prisma.guide')]) + '''</p></div>
-  <form name="contact" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
-    <input type="hidden" name="form-name" value="contact"><p hidden><label>Leave this empty: <input name="bot-field"></label></p>
+  <form name="contact" method="POST" action="''' + FORMSPREE + '''">
+    <input type="hidden" name="_subject" value="Message from zfarber.com"><input type="hidden" name="_next" value="https://zfarber.com/thanks.html"><input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
     <div class="two"><div class="field"><label for="fn">First name</label><input id="fn" name="first"></div><div class="field"><label for="ln">Last name</label><input id="ln" name="last"></div></div>
     <div class="field"><label for="em">Email</label><input id="em" name="email" type="email"></div>
     <div class="field"><label for="msg">Message</label><textarea id="msg" name="message"></textarea></div>
@@ -487,12 +490,27 @@ if SITE:
            '/israel': '/israel.html', '/features': '/about.html', '/fiction-2': '/fiction.html', '/fiction': '/fiction.html',
            '/contact': '/contact.html', '/lectures': '/speaking.html', '/books': '/books.html', '/about': '/about.html',
            '/media': '/about.html', '/in-the-media': '/about.html'}
-    lines = [f'{k}  {v}  301' for k, v in old.items()]
-    for u, p in sorted(PDF_MAP.items()):
-        lines.append(f'{u.replace("https://www.zfarber.com", "")}  {p}  301')
-    with open(os.path.join(OUT, '_redirects'), 'w', encoding='utf-8') as f:
-        f.write('\n'.join(lines) + '\n')
-    with open(os.path.join(ROOT, 'pdf-list.txt'), 'w', encoding='utf-8') as f:
-        f.write('# old Wix URL -> new path (download each, save under dist/pdf/)\n' + '\n'.join(f'{u} -> dist{p}' for u, p in sorted(PDF_MAP.items())) + '\n')
+    def forward(path, target):
+        """GitHub Pages has no server redirects: write a tiny page at the old path that forwards."""
+        d = os.path.join(OUT, path.strip('/'))
+        os.makedirs(d, exist_ok=True)
+        with open(os.path.join(d, 'index.html'), 'w', encoding='utf-8') as f:
+            f.write(f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Zev Farber</title>'
+                    f'<link rel="canonical" href="https://zfarber.com{target}"><meta http-equiv="refresh" content="0; url={target}">'
+                    f'<meta name="robots" content="noindex"></head><body><p>Moved: <a href="{target}">zfarber.com{target}</a></p></body></html>')
+    for k, v in old.items():
+        forward(k, v)
+    # PDFs: keep every old Wix address alive by placing a copy of the file there too
+    import shutil
     os.makedirs(os.path.join(OUT, 'pdf'), exist_ok=True)
+    for u, p in sorted(PDF_MAP.items()):
+        src = os.path.join(OUT, p.strip('/'))
+        oldrel = u.replace('https://www.zfarber.com/', '')
+        if os.path.exists(src):
+            dst = os.path.join(OUT, oldrel)
+            os.makedirs(os.path.dirname(dst), exist_ok=True)
+            shutil.copyfile(src, dst)
+    with open(os.path.join(ROOT, 'pdf-list.txt'), 'w', encoding='utf-8') as f:
+        f.write('# old Wix URL -> new path (download each, save under docs/pdf/)\n' + '\n'.join(f'{u} -> docs{p}' for u, p in sorted(PDF_MAP.items())) + '\n')
+    open(os.path.join(OUT, '.nojekyll'), 'w').close()  # serve _files/ and other underscore paths as-is
 print('built', len(pages), 'pages ->', OUT, '(artifact mode)' if ARTIFACT else '(site mode)' if SITE else '')

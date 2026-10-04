@@ -6,7 +6,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 HARVEST = os.path.join(ROOT, '..', 'harvest')
 ARTIFACT = '--artifact' in sys.argv
 SITE = '--site' in sys.argv
-OUT = os.path.join(ROOT, '..', 'dist') if SITE else os.path.join(ROOT, 'dist')  # site mode builds to repo-root dist/
+OUT = os.path.join(ROOT, '..', 'docs') if SITE else os.path.join(ROOT, 'dist')  # site mode builds to repo-root docs/ (GitHub Pages)
 PDF_MAP = {}  # old Wix url -> /pdf/slug.pdf (filled by build.py)
 os.makedirs(OUT, exist_ok=True)
 
@@ -71,7 +71,7 @@ def link_li(t, u):
     if 'zfarber.com/_files/' in u:
         PDF_MAP.setdefault(u, '/pdf/' + slugify(t) + '.pdf')
         if SITE:
-            u = PDF_MAP[u]
+            u = PDF_MAP[u].lstrip('/')  # relative, so the site also works under a sub-path
     attrs = ' lang="he" dir="rtl"' if is_hebrew(title) else ''
     tagh = f' <span class="tag">{esc(tag)}</span>' if tag else ''
     if u in ('—', '-', 'NOTFOUND'):

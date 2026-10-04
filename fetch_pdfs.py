@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Download the 17 PDFs still hosted on the old Wix site into dist/pdf/.
+"""Download the 17 PDFs still hosted on the old Wix site into docs/pdf/.
 Run from the repo root after a build: python3 fetch_pdfs.py"""
 import os, re, urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__))
-os.makedirs(os.path.join(HERE, 'dist', 'pdf'), exist_ok=True)
+os.makedirs(os.path.join(HERE, 'docs', 'pdf'), exist_ok=True)
 with open(os.path.join(HERE, 'site', 'pdf-list.txt'), encoding='utf-8') as f:
     for line in f:
         if not line.startswith('http'): continue
