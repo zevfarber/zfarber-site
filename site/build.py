@@ -69,7 +69,7 @@ def shell(page, title, body, fragment=False, body_class=''):
 {wrapper_open}
 <nav><div class="wrap"><a class="brand" href="index.html">Zev I. Farber</a><div class="menu">{nav}</div></div></nav>
 {body}
-<footer><div class="wrap"><span>© 2026 Zev I. Farber · <a href="contact.html">Contact</a> · <a href="speaking.html">Speaking</a> · <a href="consulting.html">Consulting</a> · <a href="books.html">Books</a> · Portraits by Tamar Hersko</span><span class="soc">{social}</span></div></footer>
+<footer><div class="wrap"><span>© 2026 Zev I. Farber · <a href="contact.html">Contact</a> · <a href="speaking.html">Speaking</a> · <a href="consulting.html">Consulting</a> · <a href="books.html">Books</a> · Portraits by <a href="https://www.tamarhersko.com/photography">Tamar Hersko</a></span><span class="soc">{social}</span></div></footer>
 </div>'''
     if fragment:
         return doc
