@@ -343,7 +343,8 @@ h += paper(
     section('Responsa', 'Questions and answers', render_list(parse('question-answer')), '<p>Short answers written for <a href="http://www.jewishvaluesonline.org">Jewish Values Online</a>.</p>'),
     section('Academic', 'Articles and chapters', render_list(parse('academic-halakha'))))
 h += actions('Next', 'Buy <em>Homosexual Relationships and Orthodox Judaism</em>', ('Buy the book', LINKS['homosexuality']),
-             [('Halakhic Realities volumes', LINKS['brain']), ('Book a lecture', 'speaking.html')])
+             [('Halakhic Realities volumes', LINKS['brain']), ('Book a lecture', 'speaking.html')],
+             book=(LINKS['homosexuality'], 'cover-homosexuality.jpg', 'Homosexual Relationships and Orthodox Judaism'))
 pages['halakha.html'] = ('Halakha · Zev Farber', h)
 
 # ---------- ISRAEL ----------
