@@ -409,7 +409,7 @@ pages['books.html'] = ('Books · Zev Farber', bk)
 
 # ---------- SPEAKING ----------
 sp = page_header('Speaking', 'Lectures, courses, and <em>scholar-in-residence weekends</em>', photo='speaking',
-    box='<figure class="side-img"><img src="img/speaking-talk.jpg" alt="Zev Farber speaking at a conference"><figcaption>Addressing the Hungarian Jewish Studies conference, Budapest, 2020</figcaption></figure>')
+    box='<figure class="side-img"><img src="img/speaking-talk.jpg" alt="Zev Farber speaking at a conference"><figcaption>Delivering the Schweitzer keynote lecture, "Can Biblical Criticism Be Integrated into Traditional Jewish Studies and Should It Be?" at the Hungarian Hebrew Studies Conference (JTS-UJS, Budapest, Feb. 5, 2020).</figcaption></figure>')
 sp += paper(
     section('Topics', 'What I talk about', '''<div class="topics">
   <div class="topic"><h3>The Bible in history</h3><p>What the Bible looks like when it is read alongside archaeology and the ancient Near East: Saul, David, and Solomon; the Exodus; Joshua and the conquest; Judah in the eighth century.</p></div>
