@@ -60,6 +60,7 @@ DESCS = {
 def shell(page, title, body, fragment=False, body_class=''):
     CUR = ' aria-current="page"'
     nav = ''.join(f'<a href="{h}"{CUR if h == page else ""}>{t}</a>' for h, t in NAV)
+    nav += f'<a class="menu-cta" href="contact.html"{CUR if page == "contact.html" else ""}>Contact</a>'
     head = f'''<title>{esc(title)}</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&family=Archivo:wght@400;500;600&display=swap">
 <style>{CSS}</style>'''

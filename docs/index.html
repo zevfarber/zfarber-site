@@ -39,6 +39,9 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 .menu a{color:var(--white-2);padding:6px 0;border-bottom:2px solid transparent}
 .menu a:hover{color:var(--white)}
 .menu a[aria-current="page"]{color:var(--white);border-bottom-color:var(--gold)}
+.menu{align-items:center}
+.menu a.menu-cta{background:var(--gold);color:var(--black);font-weight:600;padding:8px 14px;border:none;border-radius:2px}
+.menu a.menu-cta:hover,.menu a.menu-cta[aria-current="page"]{background:var(--gold-2);color:var(--black)}
 
 /* ---- buttons ---- */
 .btn{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:14px 22px;border:1px solid currentColor;border-radius:2px;display:inline-block;line-height:1;transition:background .15s,color .15s,border-color .15s;cursor:pointer;background:transparent;color:inherit}
@@ -310,7 +313,7 @@ footer a:hover{color:var(--white)}
 </head>
 <body>
 <div class="site">
-<nav><div class="wrap"><a class="brand" href="index.html">Zev I. Farber</a><div class="menu"><a href="about.html">About</a><a href="religion.html">Religion</a><a href="bible.html">Bible</a><a href="halakha.html">Halakha</a><a href="israel.html">Israel</a><a href="fiction.html">Fiction</a></div></div></nav>
+<nav><div class="wrap"><a class="brand" href="index.html">Zev I. Farber</a><div class="menu"><a href="about.html">About</a><a href="religion.html">Religion</a><a href="bible.html">Bible</a><a href="halakha.html">Halakha</a><a href="israel.html">Israel</a><a href="fiction.html">Fiction</a><a class="menu-cta" href="contact.html">Contact</a></div></div></nav>
 
 <header class="hero">
   <div class="hero-text">
