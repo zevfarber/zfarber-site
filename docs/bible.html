@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Essays by Zev Farber on the Torah, Joshua and Judges, the holidays, theology, and Jewish education.">
+<link rel="canonical" href="https://zfarber.com/bible.html">
+<meta property="og:title" content="Bible · Zev Farber">
+<meta property="og:description" content="Essays by Zev Farber on the Torah, Joshua and Judges, the holidays, theology, and Jewish education.">
+<meta property="og:image" content="https://zfarber.com/img/hero.jpg">
+<title>Bible · Zev Farber</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&family=Archivo:wght@400;500;600&display=swap">
+<style>/* zfarber.com — v2 (27 Sept 2026). Dark, cinematic top; paper body for the archives; dark close. */
+:root{
+  --black:#0C0D10;--black-2:#14161B;--black-3:#1C1F26;--line-d:#2A2E37;
+  --white:#F3EFE7;--white-2:#C9C4BA;--white-3:#8E8A81;
+  --gold:#C9A25C;--gold-2:#E2C078;
+  --paper:#F4F1EA;--paper-2:#ECE8DF;--ink:#17191E;--ink-2:#4A4E58;--ink-3:#7C808A;--rule:#DAD5C9;--card:#FBF9F4;
+  --prisma:#7C93D8;--torah:#A12F15;--noir:#B6362B;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;--text:"Source Serif 4",Georgia,serif;--sans:"Archivo",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{color-scheme:dark;scroll-behavior:smooth}
+body{margin:0;background:var(--black);color:var(--white);font-family:var(--text);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.05;margin:0;text-wrap:balance;letter-spacing:-.01em}
+.label{font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;color:var(--white-3)}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(16px,4vw,48px)}
+.note{border-left:3px solid var(--gold);padding:8px 14px;font-size:15px;line-height:1.45;margin:0;color:var(--white-2);background:rgba(255,255,255,.04)}
+.note b{color:var(--gold-2);font-family:var(--sans);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-right:8px}
+.tag{font-family:var(--sans);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-left:6px}
+
+/* ---- nav ---- */
+nav{position:sticky;top:0;z-index:20;background:rgba(12,13,16,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-d)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;flex-wrap:wrap;padding-block:8px}
+.brand{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--white);letter-spacing:0}
+.menu{display:flex;gap:clamp(12px,2.2vw,28px);font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;flex-wrap:wrap;justify-content:flex-end}
+.menu a{color:var(--white-2);padding:6px 0;border-bottom:2px solid transparent}
+.menu a:hover{color:var(--white)}
+.menu a[aria-current="page"]{color:var(--white);border-bottom-color:var(--gold)}
+
+/* ---- buttons ---- */
+.btn{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:14px 22px;border:1px solid currentColor;border-radius:2px;display:inline-block;line-height:1;transition:background .15s,color .15s,border-color .15s;cursor:pointer;background:transparent;color:inherit}
+.btn.primary{background:var(--gold);border-color:var(--gold);color:var(--black)}
+.btn.primary:hover{background:var(--gold-2);border-color:var(--gold-2)}
+.btn:not(.primary):hover{background:rgba(255,255,255,.08)}
+.btn.small{padding:11px 16px;font-size:12px}
+.more{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--gold-2)}
+.more:hover{color:var(--white)}
+
+/* ---- home hero ---- */
+.hero{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,6fr);min-height:calc(100svh - 64px);align-items:stretch}
+.hero-text{display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(48px,7vw,110px) clamp(16px,4vw,48px) clamp(40px,6vw,80px) clamp(16px,5vw,80px);gap:26px}
+.hero h1{font-size:clamp(56px,8.4vw,128px);font-weight:500;letter-spacing:-.025em;line-height:.95}
+.hero h1 em{font-style:italic;font-weight:300;color:var(--gold-2)}
+.hero .kicker{font-family:var(--sans);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-2);font-weight:500}
+.hero .lines{max-width:52ch;font-size:clamp(19px,1.6vw,23px);line-height:1.45;color:var(--white-2);font-family:var(--serif)}
+.hero .lines p{margin:0}
+.epigraph{margin:6px 0 0;max-width:46ch;border-left:2px solid var(--gold);padding-left:18px}
+.epigraph p{margin:0;font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(18px,1.5vw,22px);line-height:1.4;color:var(--white-2)}
+.epigraph cite{display:block;margin-top:10px;font-style:normal;font-family:var(--sans);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--white-3)}
+.hero-photo{position:relative;min-height:60vh;overflow:hidden}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;filter:saturate(.85) contrast(1.05)}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--black) 0%,rgba(12,13,16,.35) 18%,rgba(12,13,16,0) 45%),linear-gradient(0deg,var(--black) 0%,rgba(12,13,16,0) 30%)}
+
+.pbox-wrap{align-self:flex-start}
+.sig{display:inline-flex;flex-direction:column;gap:6px;opacity:.92}
+.sig:hover{opacity:1}
+.sig img{height:64px;width:auto;max-width:300px;object-fit:contain;object-position:left center}
+.sig.thetorah img{height:58px}
+.sig .wordmark{font-family:var(--serif);font-weight:500;font-size:22px;line-height:1.1;color:var(--white)}
+.sig .tag-dev{font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2)}
+.proj-band{padding-block:clamp(36px,5vw,64px);border-top:none;border-bottom:1px solid var(--line-d)}
+.proj-band .projects.one{max-width:none;grid-template-columns:1fr}
+.proj-band .proj{flex-direction:row;flex-wrap:wrap;align-items:center;gap:18px 40px;padding:26px 34px}
+.proj-band .proj .logo{height:52px}
+.proj-band .proj p{flex:1 1 320px}
+.proj-band .proj-acts{margin-top:0;padding-top:0;flex:0 0 auto}
+.atlas.band{border-top:none}
+.pbox{display:flex;flex-direction:column;gap:10px;padding:18px 20px 16px;border:1px solid var(--line-d);background:var(--black-3);border-left:3px solid var(--id,var(--gold));max-width:380px}
+.pbox.prisma{--id:var(--prisma)}
+.pbox.thetorah{--id:var(--torah)}
+.pbox .logo img{height:40px;width:auto;object-fit:contain;object-position:left center}
+.pbox.thetorah .logo img{height:34px}
+.pbox .wordmark{font-family:var(--serif);font-weight:500;font-size:24px;line-height:1.1;color:var(--white)}
+.pbox .role{font-family:var(--sans);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--white-3);line-height:1.4}
+.pbox-acts{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin-top:4px}
+.phead.has-box .phead-text{justify-content:space-between}
+.phead-bottom{display:flex;flex-direction:column;gap:20px;margin-top:40px}
+/* ---- dark bands ---- */
+.band{padding-block:clamp(56px,7vw,104px);border-top:1px solid var(--line-d)}
+.band .label{margin-bottom:26px}
+.band h2{font-size:clamp(34px,4vw,56px);margin-bottom:18px}
+.band-2{background:var(--black-2)}
+
+/* ---- project blocks ---- */
+.projects{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.proj{background:var(--black-3);border:1px solid var(--line-d);padding:34px 34px 30px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden}
+.proj::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--id,var(--gold))}
+.proj.prisma{--id:var(--prisma)}
+.proj.thetorah{--id:var(--torah)}
+.proj .logo{height:64px;display:flex;align-items:center}
+.proj .logo img{height:100%;width:auto;max-width:260px;object-fit:contain;object-position:left center}
+.proj.thetorah .logo img{height:52px}
+.proj .role{font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--white-3)}
+.proj h3{font-size:30px;position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.proj p{margin:0;color:var(--white-2);font-size:17px;max-width:48ch}
+.proj-acts{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;margin-top:auto;padding-top:10px}
+.projects.one{grid-template-columns:minmax(0,760px)}
+
+/* ---- atlas: the one ask ---- */
+.atlas{background:var(--black-2);border-top:1px solid var(--line-d);position:relative;overflow:hidden}
+.atlas::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(circle at 78% 40%,rgba(201,162,92,.16),transparent 38%),
+  repeating-radial-gradient(circle at 78% 40%,transparent 0 46px,rgba(201,162,92,.09) 46px 47px);pointer-events:none}
+.atlas .wrap{position:relative;display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:clamp(28px,5vw,72px);align-items:end}
+.atlas p{margin:0 0 14px;color:var(--white-2);max-width:56ch;font-size:18px}
+.atlas .ask{border-top:1px solid var(--line-d);padding-top:22px}
+.atlas .ask .label{color:var(--gold-2);margin-bottom:10px}
+.atlas .ask p{font-family:var(--serif);font-size:24px;line-height:1.3;color:var(--white)}
+.atlas .btn{margin-top:8px}
+
+/* ---- shelf ---- */
+.shelf-groups{display:flex;flex-wrap:wrap;gap:40px 48px;align-items:flex-end}
+.group{display:flex;flex-direction:column;gap:14px}
+.group .label{margin:0}
+.covers{display:flex;gap:16px;align-items:flex-end;padding:0 0 16px;border-bottom:2px solid var(--line-d)}
+.cover{width:112px;flex:none;box-shadow:0 12px 24px rgba(0,0,0,.55),0 2px 0 rgba(255,255,255,.06);transition:transform .2s;border-radius:1px;overflow:hidden;background:var(--black-3)}
+.cover img{width:100%;aspect-ratio:2/3;object-fit:cover}
+.cover:hover{transform:translateY(-6px)}
+.cover.tile{aspect-ratio:2/3;display:flex;flex-direction:column;justify-content:flex-end;padding:10px;font-family:var(--serif);font-size:15px;line-height:1.15;color:var(--white);border:1px solid var(--line-d)}
+.cover.tile small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-2);margin-bottom:6px}
+.cover.tile.lect{background:linear-gradient(160deg,#1E2230,#0F1118)}
+.cover.tile.udemy{background:linear-gradient(160deg,#2A1E2E,#151018)}
+.cover.tile.pw{background-size:cover;background-position:center;text-shadow:0 1px 3px rgba(0,0,0,.8)}
+.cover.tile.soon{background:repeating-linear-gradient(135deg,#1A1D24 0 6px,#14161B 6px 12px);color:var(--white-2)}
+.shelf-foot{margin:22px 0 0;display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+
+/* ---- projects rows ---- */
+.prows{display:grid;gap:18px}
+.prow{display:grid;grid-template-columns:132px 1fr;gap:28px;align-items:center;padding:22px 26px 22px 22px;background:var(--black-3);border:1px solid var(--line-d)}
+.prow .cover{width:132px}
+.prow .cover.tile small,.prow .cover.tile{font-size:0;color:transparent}
+.prow .cover.tile small{display:none}
+.prow h3{font-size:28px;margin:6px 0 10px}
+.prow p{margin:0 0 14px;color:var(--white-2);max-width:70ch;font-size:17px}
+.prow .btn{color:var(--white)}
+@media (max-width:600px){.prow{grid-template-columns:1fr}.prow .cover{width:112px}}
+/* ---- press ---- */
+.press{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line-d)}
+.press a{display:flex;flex-direction:column;gap:8px;padding:20px 20px 22px 0;margin-right:20px;border-bottom:1px solid var(--line-d);color:var(--white-2);font-size:15px;line-height:1.35}
+.press a b{font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-2)}
+.press a:hover span{color:var(--white)}
+
+/* ---- action strip (dark close) ---- */
+.actions{background:var(--black-2);border-top:1px solid var(--line-d);padding-block:clamp(48px,6vw,84px)}
+.act{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);align-items:center}
+.act h2{font-size:clamp(28px,3.2vw,40px);margin-top:10px}
+.act-note{margin:12px 0 0;color:var(--white-2);max-width:48ch}
+.act-btns{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:flex-end}
+.act-link{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-2)}
+.act-link:hover{color:var(--white)}
+
+/* ---- page header (topic pages) ---- */
+.phead{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);min-height:62vh;border-bottom:1px solid var(--line-d)}
+.phead-text{display:flex;flex-direction:column;justify-content:flex-end;gap:20px;padding:clamp(48px,6vw,96px) clamp(16px,4vw,48px) clamp(36px,5vw,64px) clamp(16px,5vw,80px)}
+.phead h1{font-size:clamp(44px,6.4vw,96px);letter-spacing:-.02em;max-width:14ch}
+.phead h1 em{font-style:italic;font-weight:300;color:var(--gold-2)}
+.phead .lead{margin:0;max-width:60ch;font-size:19px;color:var(--white-2)}
+.phead .lead a{color:var(--gold-2)}
+.phead-photo{position:relative;overflow:hidden;min-height:46vh}
+.phead-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;filter:saturate(.8) contrast(1.05)}
+.phead-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--black) 0%,rgba(12,13,16,.3) 20%,rgba(12,13,16,0) 50%),linear-gradient(0deg,var(--black) 0%,rgba(12,13,16,0) 28%)}
+.proj-top{padding-block:clamp(36px,5vw,64px) 0}
+/* ---- about: collage of work in the header ---- */
+.pbox-wrap:has(> .collage){align-self:stretch}
+.collage{position:relative;width:100%;max-width:720px;aspect-ratio:4/3}
+.collage .c{position:absolute;left:var(--x);top:var(--y);width:var(--w);z-index:var(--z);transform:rotate(var(--r));box-shadow:0 12px 28px rgba(0,0,0,.55);transition:transform .2s}
+.collage .c:hover{transform:rotate(0) scale(1.04);z-index:20}
+.collage .c img{width:100%;height:auto}
+.collage .card{background:var(--black-3);border:1px solid var(--line-d);padding:4% 5%}
+.collage .logo{box-shadow:none}
+.collage .word{aspect-ratio:2/1;display:flex;align-items:flex-end;padding:6%;background-position:center;background-size:cover;border:1px solid var(--line-d)}
+.collage .word.tall{aspect-ratio:2/3}
+.collage .word span{font-family:var(--sans);font-size:clamp(9px,.8vw,11px);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--white-2)}
+.collage .atlas{padding:3.5% 6%;border-left:3px solid var(--gold)}
+.collage .atlas span{font-family:var(--serif);font-size:clamp(12px,1.25vw,18px);line-height:1.15;color:var(--white)}
+.statement p{font-family:var(--serif);font-size:clamp(20px,1.8vw,24px);line-height:1.45;max-width:60ch;margin:0 0 .8em}
+.statement p:first-child{font-size:clamp(26px,2.6vw,36px);line-height:1.2}
+@media (prefers-reduced-motion:reduce){.collage .c{transition:none}}
+/* ---- framed picture beside the header photo (fiction, speaking) ---- */
+.side-img{max-width:380px;margin:0}
+.side-img img{width:100%;height:auto;filter:saturate(.85);box-shadow:0 18px 40px rgba(0,0,0,.6)}
+.noir .side-img img{filter:grayscale(1) contrast(1.05)}
+.side-img figcaption{margin-top:12px;font-family:var(--sans);font-size:12px;letter-spacing:.06em;color:var(--white-3)}
+
+/* ---- paper body ---- */
+.paper{background:var(--paper);color:var(--ink)}
+.paper .label{color:var(--ink-3)}
+.paper a{color:var(--ink)}
+.paper a:hover{color:var(--torah)}
+.paper .note{color:var(--ink-2);background:var(--card);border-left-color:var(--gold)}
+.paper .note b{color:#8C6A2A}
+section.block{padding-block:clamp(44px,6vw,80px);border-bottom:1px solid var(--rule)}
+section.block:last-child{border-bottom:none}
+.sec-head{display:grid;grid-template-columns:1fr 2fr;gap:clamp(24px,4vw,64px);align-items:start;margin-bottom:32px}
+.sec-head h2{font-size:clamp(30px,3.4vw,44px);margin-top:8px}
+.sec-head .body{max-width:62ch}
+.sec-head .body p{margin:0 0 1em;color:var(--ink-2)}
+.sec-head .body p:last-child{margin-bottom:0}
+.sec-head .body a{color:var(--ink);border-bottom:1px solid var(--rule)}
+.prose h3{font-size:24px;margin:28px 0 8px}
+.prose h3:first-child{margin-top:0}
+.prose p{margin:0 0 .6em}
+.prose p:last-child{margin-bottom:0}
+.prose a{border-bottom:1px solid var(--rule)}
+
+.arch{list-style:none;margin:0 0 8px;padding:0;border-top:1px solid var(--rule)}
+.arch li{padding:9px 0;border-bottom:1px solid var(--rule);font-size:16.5px;line-height:1.35;break-inside:avoid}
+.arch a[dir="rtl"]{display:inline-block;font-size:17px}
+.arch.cols{columns:2;column-gap:40px}
+.arch li small{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-3);margin-top:2px}
+.wrap>h3,.wrap>h4{margin-top:28px}
+.wrap>h3{font-size:28px;margin-bottom:12px}
+.wrap>h4{font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-weight:500;margin:22px 0 8px}
+.blurb{color:var(--ink-2);max-width:70ch}
+.nolink{color:var(--ink)}
+
+/* ---- books page ---- */
+.books{display:grid;grid-template-columns:repeat(3,1fr);gap:36px 32px}
+.book{display:grid;grid-template-columns:96px 1fr;gap:18px;align-items:start}
+.book .cover{width:96px}
+.book h3{font-size:21px;line-height:1.2}
+.book .meta{font-family:var(--sans);font-size:13px;color:var(--ink-3);margin-top:6px}
+.book p{margin:8px 0 0;font-size:15.5px;color:var(--ink-2)}
+.book .btn{margin-top:12px;color:var(--ink);border-color:var(--ink)}
+.book .btn:hover{background:var(--ink);color:var(--paper)}
+.paper .btn.primary{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.paper .btn.primary:hover{background:var(--torah);border-color:var(--torah)}
+
+/* ---- fiction ---- */
+.fiction{display:grid;gap:48px}
+.novel{display:grid;grid-template-columns:180px 1fr;gap:36px;align-items:start;max-width:900px}
+.novel .cover{width:180px}
+.novel h3{font-size:34px;margin-bottom:12px}
+.novel p{margin:0 0 18px;color:var(--white-2);font-size:17px}
+.site.noir{--black:#100D0E;--black-2:#171214;--black-3:#1F181A;--line-d:#332729;--gold:var(--noir);--gold-2:#E0665A;--paper:#EDE6DC;--paper-2:#E3DACD;--rule:#D2C7B8;--torah:var(--noir)}
+.site.noir .phead h1{font-style:italic;font-weight:300}
+.site.noir .hero-photo img,.site.noir .phead-photo img{filter:grayscale(1) contrast(1.1)}
+
+/* ---- topics / forms ---- */
+.topics{display:grid;grid-template-columns:1fr 1fr;gap:18px 40px}
+.topic{padding:22px 0;border-top:1px solid var(--rule)}
+.topic h3{font-size:24px;margin-bottom:8px}
+.topic p{margin:0;color:var(--ink-2);font-size:16.5px}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px)}
+.contact .muted{color:var(--ink-2);max-width:48ch}
+.links{margin:6px 0 0;line-height:1.9}
+form{display:grid;gap:14px}
+.field{display:grid;gap:6px}
+.field label{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--ink-2)}
+.field input,.field textarea{font:inherit;font-size:16px;padding:11px 12px;border:1px solid var(--rule);border-radius:2px;background:var(--card);color:var(--ink);width:100%}
+.field textarea{min-height:130px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.h1s{font-size:clamp(34px,4vw,52px);margin:8px 0 18px}
+.h2{font-size:clamp(30px,3.4vw,44px);margin:8px 0 18px}
+
+footer{padding-block:32px;color:var(--white-3);font-family:var(--sans);font-size:13px;border-top:1px solid var(--line-d);background:var(--black)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer a{color:var(--white-2)}
+footer a:hover{color:var(--white)}
+
+.site{background:var(--black);color:var(--white)}
+
+@media (max-width:1000px){
+  .press{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;min-height:0}
+  .hero-photo{order:-1;min-height:0;aspect-ratio:4/5;max-height:70vh}
+  .hero-photo::after{background:linear-gradient(0deg,var(--black) 0%,rgba(12,13,16,0) 40%)}
+  .hero-text{padding-top:8px}
+  .pbox-wrap{order:2;margin-top:28px}
+  .phead-bottom{margin-top:0}
+  .phead{grid-template-columns:1fr;min-height:0}
+  .phead-photo{order:-1;aspect-ratio:4/3;min-height:0}
+  .phead-photo::after{background:linear-gradient(0deg,var(--black) 0%,rgba(12,13,16,0) 40%)}
+  .projects,.act,.atlas .wrap,.sec-head,.books,.topics,.contact .wrap{grid-template-columns:1fr}
+  .act-btns{justify-content:flex-start}
+  .arch.cols{columns:1}
+  .novel{grid-template-columns:120px 1fr;gap:20px}
+  .novel .cover{width:120px}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .press{grid-template-columns:1fr}
+  .two{grid-template-columns:1fr}
+  .menu{font-size:12px;gap:12px}
+  .cover{width:96px}
+  .covers{flex-wrap:wrap}
+  .novel{grid-template-columns:1fr}
+  .novel .cover{width:150px}
+}
+@media (prefers-reduced-motion:reduce){.cover,.btn{transition:none}.cover:hover{transform:none}}
+</style>
+</head>
+<body>
+<div class="site">
+<nav><div class="wrap"><a class="brand" href="index.html">Zev I. Farber</a><div class="menu"><a href="about.html">About</a><a href="religion.html">Religion</a><a href="bible.html" aria-current="page">Bible</a><a href="halakha.html">Halakha</a><a href="israel.html">Israel</a><a href="fiction.html">Fiction</a></div></div></nav>
+<header class="phead has-box"><div class="phead-text"><div class="pbox-wrap"><a class="sig thetorah" href="https://www.thetorah.com/author/zev-farber"><img src="img/thetorah-logo-white.svg" alt="TheTorah.com"></a></div><div class="phead-bottom"><div class="label">Bible</div><h1>Essays on the <em>Hebrew Bible</em></h1></div></div><div class="phead-photo"><img src="img/bible.jpg" alt=""></div></header><section class="band proj-band"><div class="wrap"><div class="projects one"><article class="proj thetorah">
+  <div class="logo"><img src="img/thetorah-logo-white.svg" alt="TheTorah.com"></div>
+  <div class="role">Senior Editor and Fellow</div>
+  <h3>TheTorah.com</h3>
+  <p>Our mission is to make academic biblical scholarship accessible and engaging to readers from all backgrounds.</p>
+  <div class="proj-acts"><a class="btn small" href="https://preview.mailerlite.com/webforms/landing/i9y0l8">Get the newsletter</a><a class="more" href="https://www.thetorah.com/author/zev-farber">My essays →</a></div>
+</article></div></div></section><div class="paper"><section class="block"><div class="wrap"><div class="sec-head"><div><div class="label">Torah</div><h2>Genesis to Deuteronomy</h2></div><div class="body"></div></div><h4>Genesis</h4>
+<h3>Creation and Noah</h3>
+<ul class="arch cols">
+<li><a href="https://www.academia.edu/26982959/The_Meaning_of_Be-Reishit">The Meaning of &#x27;Be-Reishit&#x27;</a> <span class="tag">paper</span></li>
+<li><a href="https://www.thetorah.com/article/if-the-sun-is-created-on-day-4-what-is-the-light-on-day-1">What is the Light on Day One?</a></li>
+<li><a href="https://www.thetorah.com/article/how-the-canaan-ham-curse-conundrum-came-to-be">The Canaan-Ham Curse Conundrum</a></li>
+<li><a href="https://www.thetorah.com/article/noahs-original-identity-the-first-winemaker">Noah&#x27;s Original Identity: The First Winemaker</a></li>
+<li><a href="https://www.thetorah.com/article/a-textual-study-of-noahs-flood">A Textual Study of Noah&#x27;s Flood</a></li>
+</ul>
+<h3>Abraham and Isaac</h3>
+<ul class="arch cols">
+<li><a href="https://www.thetorah.com/article/is-sarah-old-or-young-when-kidnapped-by-abimelech">Is Sarah Old or Young when Taken by Abimelech?</a></li>
+<li><a href="https://www.thetorah.com/article/the-mysterious-land-of-moriah">The Mysterious Land of Moriah</a></li>
+<li><a href="https://www.thetorah.com/article/lots-absence-in-abrahams-plea-for-sodom-and-gomorrah">Lot&#x27;s Absence in Abraham&#x27;s Plea</a></li>
+</ul>
+<h3>Jacob and Joseph</h3>
+<ul class="arch cols">
+<li><a href="https://www.thetorah.com/article/the-source-of-jacobs-two-blessings">The Source of Jacob&#x27;s Two Blessings</a></li>
+<li><a href="https://www.academia.edu/35129744/Choosing_a_Wife_Did_Yaakov_Get_It_Right">Choosing a Wife: Did Jacob Get it Right?</a> <span class="tag">paper</span></li>
+<li><a href="https://www.thetorah.com/article/how-is-it-possible-that-jacob-mistakes-leah-for-rachel">How is it Possible that Jacob Mistakes Leah for Rachel?</a></li>
+<li><a href="https://www.thetorah.com/article/maternal-impressions-from-sheep-to-humans">Maternal Impressions: From Sheep to Humans</a></li>
+<li><a href="https://www.thetorah.com/article/the-covenant-of-laban-and-jacob-at-gal-ed-a-textual-critical-analysis">The Covenant of Laban and Jacob at Gal-ed</a></li>
+<li><a href="https://www.thetorah.com/article/our-stepmother-keturah">Our Stepmother: Keturah</a></li>
+<li><a href="https://www.thetorah.com/article/abrahams-premature-obituary">Abraham&#x27;s Premature Obituary</a></li>
+<li><a href="https://www.thetorah.com/article/who-was-rebekahs-father">Who Was Rebekah&#x27;s Father?</a></li>
+<li><a href="https://www.thetorah.com/article/rebekah-ran-to-her-mothers-household-where-was-her-father">Where Was Rebekah&#x27;s Father?</a></li>
+<li><a href="https://www.thetorah.com/article/edomite-kings-list-is-it-post-mosaic">Edomite Kings List: Is It Post-Mosaic?</a></li>
+<li><a href="https://www.myjewishlearning.com/article/living-as-neighbors/">Living as Neighbors</a></li>
+<li><a href="https://www.thetorah.com/article/joseph-in-custody-enslaved-or-imprisoned">Joseph in Custody: Enslaved or Imprisoned?</a></li>
+<li><a href="https://www.thetorah.com/article/jacob-the-conqueror-of-shechem">Jacob the Conqueror of Shechem</a></li>
+<li><a href="https://www.thetorah.com/article/jacobs-multiple-death-scenes">Jacob&#x27;s Multiple Death Scenes</a></li>
+</ul>
+<h4>Exodus</h4>
+<h3>The Exodus Story</h3>
+<ul class="arch cols">
+<li><a href="https://www.thetorah.com/article/moses-always-knew-he-was-a-hebrew-and-so-did-everyone-else">Moses Always Knew He Was a Hebrew — and So Did Everyone Else</a></li>
+<li><a href="https://www.thetorah.com/article/how-gods-revelation-of-the-name-yhwh-continues-to-enlighten">How God&#x27;s Revelation of the Name YHWH Continues to Enlighten</a></li>
+<li><a href="https://www.thetorah.com/article/the-resumptive-repetition-wiederaufnahme">The Resumptive Repetition</a></li>
+<li><a href="https://www.thetorah.com/article/how-does-god-answer-the-question-what-is-your-name">How Does God Answer the Question: What is Your Name?</a></li>
+<li><a href="https://www.thetorah.com/article/exodus-through-deception-asking-for-a-three-day-festival">Exodus Through Deception</a></li>
+<li><a href="https://www.thetorah.com/article/the-missing-speeches-in-the-plague-narrative-and-the-samaritan-pentateuch">The Missing Speeches in the Slave Narrative and the Samaritan Pentateuch</a></li>
+<li><a href="https://www.thetorah.com/article/sacrificing-a-lamb-in-egypt">Sacrificing a Lamb in Egypt</a></li>
+<li><a href="https://www.thetorah.com/article/shepherds-and-eating-with-hebrews-an-abomination-to-the-egyptians">Shepherds and Eating with Hebrews: An Abomination to the Egyptians?</a></li>
+<li><a href="https://www.thetorah.com/article/what-really-happened-at-the-sea">What Really Happened at the Sea?</a></li>
+<li><a href="https://www.thetorah.com/article/the-torahs-exodus">The Torah&#x27;s Exodus</a></li>
+</ul>
+<h3>Laws</h3>
+<ul class="arch cols">
+<li><a href="https://www.thetorah.com/article/prohibition-of-meat-and-milk-its-origins-in-the-text">The Prohibiton of Meat and Milk</a></li>
+<li><a href="https://www.thetorah.com/article/bring-man-to-the-carcass-or-carcass-to-man">Bring the Man to the Carcass or the Carcass to the Man?</a></li>
+<li><a href="https://www.academia.edu/39224051/Israelite_Festivals_From_Cyclical_Time_Celebrations_to_Linear_Time_Commemorations">Israelite Festivals - From Cyclical to Linear Time</a> <span class="tag">paper</span></li>
+<li><a href="https://www.thetorah.com/article/the-hebrew-slave-exodus-leviticus-and-deuteronomy">The Law of the Hebrew Slave</a></li>
+</ul>
+<h3>The Tabernacle and the Golden Calf</h3>
+<ul class="arch cols">
+<li><a href="https://www.myjewishlearning.com/article/living-as-neighbors/">Living as Neighbors</a></li>
+<li><a href="http://thetorah.com/the-cherubim/">The Cherubim</a></li>
+<li><a href="http://thetorah.com/punishing-children-for-the-sins-of-their-parents/">Punishing Children for the Sins of their Parents</a></li>
+<li><a href="https://thetorah.com/does-yhwh-remit-punishment/">Does YHWH Remit Punishment?</a></li>
+<li><a href="http://thetorah.com/the-other-ohel-moed/">The Other Ohel Moed</a></li>
+<li><a href="https://www.thetorah.com/article/the-prohibition-of-shaving-in-the-torah-and-halacha">The Prohibition of Shaving</a></li>
+</ul>
+<h4>Leviticus</h4>
+<ul class="arch cols">
+<li><a href="https://www.thetorah.com/article/the-purification-of-a-niddah-the-torah-requirement">The Purification of a Niddah: The Torah Requirement</a></li>
+<li><a href="https://www.thetorah.com/article/bald-spots-on-clothing-an-ancient-scribal-error">Bald Spots on Clothing: A(n Un)Missable, Ancient Scribal Error</a></li>
+<li><a href="https://www.thetorah.com/article/the-parturients-days-of-purity-from-torah-to-halacha">The Parturient&#x27;s &quot;Days of Purity&quot;: From Torah to Halacha</a></li>
+<li><a href="https://www.thetorah.com/article/this-is-the-torah-for-the-priests-performing-the-offerings">&quot;This is the Torah&quot; for the Priests Performing the Offerings</a></li>
+<li><a href="https://www.thetorah.com/article/postpartum-impurity-why-is-the-duration-double-for-a-girl">Postpartum Impurity: Why is the Duration Double for a Girl?</a></li>
+<li><a href="https://www.myjewishlearning.com/article/hope-and-curses/">Hope and Curses</a></li>
+<li><a href="https://www.thetorah.com/article/black-or-yellow-hair-a-scribe-miscopied-the-laws-of-tzaraat">Black or Yellow Hair: A Scribe Miscopied the Laws of Tzaraat</a></li>
+<li><a href="https://www.thetorah.com/article/at-33-you-will-discover-azazels-secret">At 33, You Will Discover Azazel&#x27;s Secret</a></li>
+</ul>
+<h4>Numbers</h4>
+<h3>Scouts &amp; Spies</h3>
+<ul class="arch cols">
+<li><a href="https://www.thetorah.com/article/unscrambling-the-scout-story-with-the-documentary-hypothesis">Unscrambling the Scout Story with the Documentary Hypothesis</a></li>
+<li><a href="https://www.thetorah.com/article/what-was-caleb-the-kenizzites-connection-to-hebron">Caleb the Kennizite&#x27;s Connection to Hebron</a></li>
+<li><a href="https://www.thetorah.com/article/kiryat-arba-the-father-of-giants-and-the-city-of-four">Kiryat Arba: Father of Giants, City of Four</a></li>
+<li><a href="https://www.thetorah.com/article/kiryat-arba-is-hebron-but-is-it">Kiryat Arba is Hebron: Is It?</a></li>
+<li><a href="https://www.thetorah.com/article/why-was-joshua-singled-out-by-moses">Why Was Joshua Singled Out by Moses?</a></li>
+</ul>
+<h3>Narratives &amp; Genealogies</h3>
+<ul class="arch cols">
+<li><a href="https://www.thetorah.com/article/pre-biblical-aaron-miriam-and-moses">Pre-Biblical Aaron, Moses, Miriam</a></li>
+<li><a href="https://www.thetorah.com/article/moses-father-in-law-kenite-or-midianite">Moses&#x27; Father-in-Law: Kenite or Midianite?</a></li>
+<li><a href="https://www.thetorah.com/series/korah-datan-and-abiram-case-study">Korah, Datan and Abiram: A Case Study of Academic Methods</a></li>
+<li><a href="https://www.thetorah.com/article/what-do-genealogies-teach-us-about-torah">What Do Genealogies Teach Us About Torah?</a></li>
+</ul>
+<h3>Laws</h3>
+<ul class="arch cols">
+<li><a href="https://www.thetorah.com/article/elazar-speaks-once-in-the-torah-why-does-he-interrupt-moses">Elazar Speaks Once: Why Does he Interrupt Moses?</a></li>
+<li><a href="https://www.thetorah.com/article/joshua-is-appointed-leader-three-times-but-is-he-in-charge">Joshua Appointed Three Times: But is he in Charge?</a></li>
+<li><a href="https://www.thetorah.com/article/the-midianite-war-where-is-joshua">The Midianite War: Where is Joshua?</a></li>
+<li><a href="https://www.thetorah.com/article/making-maaser-work-for-the-times">Ma&#x27;aser for the Times: Temple Tax to Charity and Back</a></li>
+<li><a href="https://www.thetorah.com/article/how-many-trumpet-blasts-to-travel-mt-sp-lxx">How Many Trumpet Blasts to Travel?</a></li>
+<li><a href="https://www.thetorah.com/article/relegating-redemption-of-the-firstborn-to-a-one-time-event-in-the-wilderness">Redemption of the Firstborn: a One-Time Event</a></li>
+<li><a href="https://www.thetorah.com/article/sotah-a-purification-ritual-for-an-adulteress-revised-into-an-ordeal">Sotah: A Purification Ritual for an Adulteress Revised into an Ordeal</a></li>
+</ul>
+<h4>Deuteronomy</h4>
+<ul class="arch cols">
+<li><a href="https://www.thetorah.com/article/the-opening-of-devarim-redaction-criticism-and-modern-midrash">The Opening of Devarim: Redaction Criticism and Modern Midrash</a></li>
+<li><a href="https://www.thetorah.com/article/the-opening-of-devarim-a-recounting-or-different-version-of-the-wilderness-experience">The Opening of Devarim: A Recounting or Different Version of the Wilderness Experience?</a></li>
+<li><a href="https://www.thetorah.com/article/the-mitzvah-of-covering-the-blood-of-wild-animals">The Mitzvah of Covering the Blood of Wild Animals</a></li>
+<li><a href="https://www.thetorah.com/article/haazinu-the-songs-enigmatic-climax">Haazinu: The Song&#x27;s Enigmatic Climax</a></li>
+<li><a href="https://www.thetorah.com/article/unspoken-hemorrhoids-making-the-torah-reading-polite">Unspoken Hemorrhoids: Making the Torah Reading Polite</a></li>
+<li><a href="https://www.thetorah.com/article/does-the-torah-really-want-us-to-appoint-a-king">Does the Torah Really Want Us to Appoint a King?</a></li>
+<li><a href="https://www.thetorah.com/article/marrying-your-daughter-to-her-rapist">Marrying Your Daughter to Her Rapist: A Test Case in Dealing with Morally Problematic Texts</a></li>
+<li><a href="https://www.thetorah.com/article/marrying-a-beautiful-captive-woman">Marrying a Captive Woman</a></li>
+<li><a href="https://www.myjewishlearning.com/article/law-of-the-king/">Law of the King</a></li>
+<li><a href="https://www.thetorah.com/article/can-torah-contradict-halacha">Can the Torah Contradict Halachah? The Ibn Ezra vs. Rambam</a></li>
+</ul>
+<h3>General</h3>
+<ul class="arch cols">
+<li><a href="https://www.thetorah.com/article/kosher-torah-text-three-generations-of-maimonides-strict-to-lenient">Kosher Torah Text? Three Generations of Maimonides, Strict to Lenient</a></li>
+<li><a href="https://www.academia.edu/35545635/Pseudo-Philo_and_the_Pharisees_A_Look_at_the_Prehistory_of_Rabbinic_Judaism">Pseudo-Philo and the Pharisees: A Look at the Prehistory of Rabbinic Judaism</a> <span class="tag">paper</span></li>
+<li><a href="https://www.academia.edu/5292892/Assumptio_Mosis_and_the_Eschatology_of_Despair">Assumptio Mosis and the Eschatology of Despair</a> <span class="tag">paper</span></li>
+<li><a href="https://www.academia.edu/42963522/Religion_in_Eighth-Century_Judah">Religion in Eighth Century Judah</a> <span class="tag">paper</span></li>
+</ul></div></section><section class="block"><div class="wrap"><div class="sec-head"><div><div class="label">Joshua and Judges</div><h2>Joshua and Judges</h2></div><div class="body"></div></div><ul class="arch cols">
+<li><a href="https://www.thetorah.com/article/the-israelite-conquest-of-jerusalem-in-the-bible-when-and-who">The Conquest of Jerusalem: When and Who?</a></li>
+<li><a href="https://www.academia.edu/35545660/Snippets_from_a_Lost_Joshua_Cycle_The_Prehistory_of_an_Israelite_Legendary_Hero">Snippets from a Lost Joshua Cycle - The Prehistory of an Israelite Hero</a> <span class="tag">paper</span></li>
+<li><a href="https://www.academia.edu/5509662/Jerubaal_Jacob_and_the_Battle_for_Shechem_A_Tradition_History">Jerubaal, Jacob, and the Battle for Shechem - A Tradition History</a> <span class="tag">paper</span></li>
+<li><a href="https://www.academia.edu/2439707/Timnat_Heres_and_the_Origins_of_the_Joshua_Tradition">Timnat Heres and the Origins of the Joshua Tradition</a> <span class="tag">paper</span></li>
+<li><a href="https://www.amazon.com/dp/3110338882">Images of Joshua in the Bible and Their Reception</a> <span class="tag">book</span></li>
+<li><a href="https://blog.hartman.org.il/post/when-did-jerusalem-become-an-israeli-city" lang="he" dir="rtl">מתי הפכה ירושלים לעיר ישראלית</a> <span class="tag">Hebrew</span></li>
+</ul></div></section><section class="block"><div class="wrap"><div class="sec-head"><div><div class="label">Holidays</div><h2>The Festivals</h2></div><div class="body"></div></div><h3>Passover</h3>
+<ul class="arch cols">
+<li><a href="https://www.thetorah.com/article/the-original-reason-for-spilling-wine-protection-from-the-plagues">Spilling Wine: Protection from the Plagues</a></li>
+<li><a href="https://www.thetorah.com/article/what-is-better-than-wine">What is Better than Wine?</a></li>
+<li><a href="https://www.thetorah.com/article/shepherds-and-eating-with-hebrews-an-abomination-to-the-egyptians">An Abomination to the Egyptians?</a></li>
+<li><a href="https://www.thetorah.com/article/exodus-through-deception-asking-for-a-three-day-festival">Exodus Thrugh Deception</a></li>
+<li><a href="https://www.thetorah.com/article/the-torahs-exodus">The Torah&#x27;s Exodus</a></li>
+<li><a href="https://www.thetorah.com/article/how-eating-matzot-became-part-of-the-exodus-story">How Matzah Became Part of the Story</a></li>
+<li><a href="https://blog.hartman.org.il/post/why-do-we-eat-matzos" lang="he" dir="rtl">מדוע אנו אוכלים מצות בפסח</a> <span class="tag">Hebrew</span></li>
+<li><a href="https://www.thetorah.com/article/what-really-happened-at-the-sea">Splitting the Story of the Sea</a></li>
+<li><a href="https://www.thetorah.com/article/the-four-sons-how-the-midrash-developed">The Four Sons</a></li>
+<li><a href="https://www.thetorah.com/article/sacrificing-a-lamb-in-egypt">Sacrificing a Lamb in Egypt</a></li>
+<li><a href="https://www.thetorah.com/article/the-missing-speeches-in-the-plague-narrative-and-the-samaritan-pentateuch">The Missing Speeches in the Plague Story</a></li>
+</ul>
+<h3>Shavuot</h3>
+<ul class="arch cols">
+<li><a href="https://www.thetorah.com/article/in-what-way-is-shavuot-zman-matan-torateinu">What Torah Did We Receive?</a></li>
+<li><a href="https://www.thetorah.com/article/when-does-counting-the-omer-begin">The Omer - When?</a></li>
+<li><a href="https://blog.hartman.org.il/post/when-did-shavuot" lang="he" dir="rtl">זמן מתן תורתנו</a> <span class="tag">Hebrew</span></li>
+</ul>
+<h3>Sukkot</h3>
+<ul class="arch cols">
+<li><a href="https://www.thetorah.com/article/the-origins-of-sukkot">The Origins of Sukkot</a></li>
+<li><a href="https://www.thetorah.com/article/the-ritual-of-hoshana-rabbah">Summoning God on Hoshanah Rabba</a></li>
+<li><a href="https://www.thetorah.com/article/water-libation-a-sukkot-rain-making-ritual">An Ancient Rain-Making Ritual</a></li>
+<li><a href="https://www.thetorah.com/article/who-said-all-is-futile">Kohelet: Is All Futile?</a></li>
+<li><a href="https://www.mdpi.com/2077-1444/10/5/323/htm">Israelite Festivals</a> <span class="tag">paper</span></li>
+<li><a href="https://blog.hartman.org.il/post/hoshaanot-zeev-farber" lang="he" dir="rtl">טקס זימון האל</a> <span class="tag">Hebrew</span></li>
+</ul>
+<h3>High Holidays</h3>
+<ul class="arch cols">
+<li><a href="https://www.thetorah.com/article/punishing-children-for-the-sins-of-their-parents">The Sins of Their Parents</a></li>
+<li><a href="https://www.thetorah.com/article/does-yhwh-remit-punishment">Does God Remit Punishment?</a></li>
+<li><a href="https://www.myjewishlearning.com/article/the-anxiety-of-autumn/">The Anxiety of Autumn</a></li>
+</ul>
+<h3>Purim</h3>
+<ul class="arch cols">
+<li><a href="https://www.thetorah.com/article/unraveling-megillat-esther-how-the-story-was-developed">Unraveling Megillat Esther</a></li>
+<li><a href="https://www.thetorah.com/article/why-does-mordechai-not-report-the-assassination-plot-directly-to-ahasuerus">The Assassination Plot</a></li>
+<li><a href="https://www.thetorah.com/article/ahasuerus-and-vashti-the-story-megillat-esther-does-not-tell-you">Ahasuerus and Vashti in Midrash</a></li>
+<li><a href="https://atlantajewishtimes.timesofisrael.com/more-on-vashti-and-midrash/">In Defense of Vashti</a></li>
+<li><a href="https://www.thetorah.com/article/the-220-year-history-of-the-achaemenid-persian-empire">The Achaemenid Persian Empire</a></li>
+<li><a href="https://blog.hartman.org.il/post/farber-megilat-esther-riddle" lang="he" dir="rtl">סיפור בגתן ותרש</a> <span class="tag">Hebrew</span></li>
+<li><a href="https://www.myjewishlearning.com/article/vashtis-bad-rap/">Vashti&#x27;s Bad Rap</a></li>
+<li><a href="https://www.thetorah.com/article/persias-achaemenid-dynasty-if-you-read-the-bible-without-history">Persia&#x27;s Achaemenid Dynasty</a></li>
+</ul>
+<h3>Tisha B&#x27;Av</h3>
+<ul class="arch cols">
+<li><a href="https://www.thetorah.com/article/why-jews-fast">Why Jews Fast</a></li>
+<li><a href="https://www.thetorah.com/article/tisha-b-av-on-what-day-were-the-jerusalem-temples-destroyed">On What Day Were the Temples Destroyed?</a></li>
+<li><a href="https://heb.hartman.org.il/when-was-the-temple-ruined/" lang="he" dir="rtl">?יותר מתשובה אחת, מתי בדיוק נחרב בית המקדש</a> <span class="tag">Hebrew</span></li>
+</ul>
+<h3>Chanukah &amp; Minor Holidays</h3>
+<ul class="arch cols">
+<li><a href="https://www.thetorah.com/article/chanukah-not-judah-maccabees-holiday">Chanukah: Not Judah Maccabee&#x27;s Holiday</a></li>
+<li><a href="https://www.thetorah.com/article/the-ancient-judean-holiday-yom-nicanor-13th-of-adar">Nicanor Day</a></li>
+<li><a href="https://www.thetorah.com/article/the-cancellation-of-megillat-taanit">Cancelling Megillat Ta&#x27;anit</a></li>
+<li><a href="https://www.myjewishlearning.com/article/why-hanukkah-became-such-a-big-deal/">Why Hanukkah Became Such a Big Deal</a></li>
+</ul></div></section><section class="block"><div class="wrap"><div class="sec-head"><div><div class="label">Theology</div><h2>Torah, history, and belief</h2></div><div class="body"></div></div><h3>Theology</h3>
+<h3>Torah of Moses?</h3>
+<ul class="arch cols">
+<li><a href="https://www.thetorah.com/series/avraham-avinu-is-my-father-thoughts-on-torah-history-and-judaism">Avraham Avinu is My Father</a></li>
+<li><a href="https://www.thetorah.com/article/torah-is-from-heaven-what-do-we-really-mean">Torah is From Heaven: What Do We Mean?</a></li>
+<li><a href="https://masorti.org.uk/newsblog/newsblog/news-single/article/how-is-the-torah-like-the-mishnah-a-textual-look-at-the-story-of-the-jews.html#.XleCtC2B0Wo">How is the Torah like the Mishnah? A Textual Look at the Story of the Jews</a></li>
+<li><a href="https://www.thetorah.com/article/seven-torah-passages-of-non-mosaic-origin-according-to-ibn-ezra-and-r-joseph-bonfils">Seven Torah Passages of Non-Mosaic Origin</a></li>
+<li><a href="https://www.thetorah.com/article/the-song-of-the-well-psalm-136-was-removed-from-the-torah">R. Yehudah HaChasid&#x27;s Radical Suggestion: The Song of the Well</a></li>
+<li><a href="https://www.thetorah.com/article/edomite-kings-list-is-it-post-mosaic">The Edomite Kings List: Is It Post-Mosaic?</a></li>
+<li><a href="https://www.thetorah.com/article/the-significance-of-ibn-ezras-position-that-verses-were-added-to-the-torah">The Significance of Ibn Ezra&#x27;s Position that Verses were Added to the Torah</a></li>
+<li><a href="https://www.thetorah.com/article/torah-min-ha-shamayim-a-guide-to-the-four-questions">Torah Min Ha-Shamayim: A Guide to the Four Questions</a></li>
+<li><a href="https://www.thetorah.com/article/editorial-comments-in-the-opening-chapters-of-deuteronomy">Ibn Ezra&#x27;s Secret: The Opening Chapters of Deuteronomy</a></li>
+<li><a href="https://www.thetorah.com/article/the-torahs-exodus">The Torah&#x27;s Exodus</a></li>
+</ul>
+<h4>God, Truth, and Ethics</h4>
+<ul class="arch cols">
+<li><a href="https://www.thetorah.com/blogs/virtue-signaling-or-speaking-out-ezekiel-versus-jeremiah">Virtue Signaling or Speaking Out: Ezekiel versus Jeremiah</a></li>
+<li><a href="pdf/God-Consciousness-and-the-Problem-of-Anthropopathism.pdf">God, Consciousness, and the Problem of Anthropopathism</a> <span class="tag">PDF</span></li>
+<li><a href="https://www.thetorah.com/article/marrying-your-daughter-to-her-rapist">Marrying Your Daughter to her Rapist</a></li>
+<li><a href="https://blogs.timesofisrael.com/messianic-judaism-and-jewish-christianity/">Messianic Judaism and Jewish Christianity</a></li>
+<li><a href="http://www.jewishvaluesonline.org/982">Jewish Perspectives on Revelation</a> <span class="tag">Q&amp;A</span></li>
+<li><a href="http://www.jewishvaluesonline.org/746">Developing a Relationship with God</a> <span class="tag">Q&amp;A</span></li>
+<li><a href="https://www.thetorah.com/article/can-the-torah-be-a-moral-authority-in-modern-times">Can the Torah Be a Moral Authority in Modern Times?</a></li>
+</ul></div></section><section class="block"><div class="wrap"><div class="sec-head"><div><div class="label">Education</div><h2>Teaching Torah with the scholarship in view</h2></div><div class="body"></div></div><ul class="arch cols">
+<li><a href="https://www.thetorah.com/article/traditional-torah-study-versus-scientific-analysis">Traditional Torah Study vs Scientific Analysis</a></li>
+<li><a href="https://www.thetorah.com/article/can-orthodox-education-survive-biblical-criticism">Can Orthodox Education Survive Biblical Criticism?</a></li>
+<li><a href="https://morethodoxy.org/2013/07/25/the-torah-thetorah-com-and-the-recent-tumult-in-context-by-rabbi-zev-farber/">Torah, TheTorah.com, and the Recent Tumult in Context</a></li>
+<li><a href="https://www.thetorah.com/blogs/digging-archaeology-a-report-from-the-trenches">Digging Archeology - A Report from the Trenches</a></li>
+<li><a href="https://blogs.timesofisrael.com/hitler-simply-chose-the-wrong-side-a-theology-of-reversed-racism/">A Theology of Reversed Racism</a></li>
+</ul></div></section><section class="block"><div class="wrap"><div class="sec-head"><div><div class="label">Academic</div><h2>Articles, chapters, edited volumes, and reference works</h2></div><div class="body"><p>Peer-reviewed articles and book chapters, two journal volumes I edited, and entries in reference works. Items without a link are in print only.</p></div></div><h3>Articles and chapters</h3>
+<ul class="arch cols">
+<li><a href="https://sbl-site.org/assets/pdfs/pubs/0603109-front.pdf">Struck Down by a Woman: Abimelech&#x27;s Humiliating Intertextual Death (Reading Gender in Judges, SBL 2023)</a> <span class="tag">paper</span></li>
+<li><a href="https://www.mohrsiebeck.com/en/book/book-seams-in-the-hexateuch-ii-9783161609039/">The Samaritan Books of Joshua (Book Seams in the Hexateuch II, FAT 168, 2023)</a> <span class="tag">paper</span></li>
+<li><a href="https://press.huc.edu/huca/huca-table-of-contents/">Moses the Transjordanian Prophet (HUCA 90, 2019)</a> <span class="tag">paper</span></li>
+<li><a href="https://www.mdpi.com/2077-1444/10/5/323/htm">Israelite Festivals: From Cyclical Time Celebrations to Linear Time Commemorations (Religions, 2019)</a> <span class="tag">paper</span></li>
+<li><a href="https://www.mohrsiebeck.com/en/book/book-seams-in-the-hexateuch-i-9783161544040/">Joshua the Savior of Gibeon: Reconstructing the Earliest Layer of the Joshua Account, with Jacob L. Wright (Book Seams in the Hexateuch I, FAT 120, 2018)</a> <span class="tag">paper</span></li>
+<li><a href="https://www.academia.edu/42963522/Religion_in_Eighth-Century_Judah">Religion in Eighth-Century Judah: An Overview (2018)</a> <span class="tag">paper</span></li>
+<li><a href="https://www.academia.edu/35545660/Snippets_from_a_Lost_Joshua_Cycle_The_Prehistory_of_an_Israelite_Legendary_Hero">Snippets from a Lost Joshua Cycle: The Prehistory of an Israelite Legendary Hero (2017)</a> <span class="tag">paper</span></li>
+<li><a href="https://www.academia.edu/35545635/Pseudo-Philo_and_the_Pharisees_A_Look_at_the_Prehistory_of_Rabbinic_Judaism">Pseudo-Philo and the Pharisees: A Look at the Prehistory of Rabbinic Judaism (2017)</a> <span class="tag">paper</span></li>
+<li><a href="https://www.journals.uchicago.edu/doi/10.5615/neareastarch.78.2.0088">Tel ʿEton as Biblical ʿEglon (in Faust and Katz, Near Eastern Archaeology 78.2, 2015)</a> <span class="tag">paper</span></li>
+<li><a href="https://www.academia.edu/5509662/Jerubaal_Jacob_and_the_Battle_for_Shechem_A_Tradition_History">Jerubaal, Jacob, and the Battle for Shechem: A Tradition History (JHS, 2013)</a> <span class="tag">paper</span></li>
+<li><a href="https://www.academia.edu/5292892/Assumptio_Mosis_and_the_Eschatology_of_Despair">Assumptio Mosis and the Eschatology of Despair (Relegere, 2013)</a> <span class="tag">paper</span></li>
+<li><a href="https://www.academia.edu/2439707/Timnat_Heres_and_the_Origins_of_the_Joshua_Tradition">Timnat Heres and the Origins of the Joshua Tradition (BETL 250, 2010)</a> <span class="tag">paper</span></li>
+</ul>
+<h3>Edited journal volumes</h3>
+<ul class="arch cols">
+<li><a href="https://press.huc.edu/huca/huca-table-of-contents/">The Making of Moses (Hebrew Union College Annual 90, 2019), edited with Mark Leuchter</a></li>
+<li><a href="https://yeshivatmaharat.org/keren-journal-volume-1/">Keren 1 (Yeshivat Maharat, 2013), editor</a></li>
+</ul>
+<h3>Reference works</h3>
+<ul class="arch cols">
+<li><span class="nolink">Orthodox Judaism and Bible Criticism (Encyclopedia of the Bible and Its Reception 22, 2024)</span></li>
+<li><span class="nolink">Rabbinic Biblical Interpretation (The Hebrew Bible in 5 Minutes, 2023)</span></li>
+<li><a href="https://www.bibleodyssey.org/articles/joshua/">Joshua (Bible Odyssey, 2021)</a></li>
+<li><a href="https://academic.oup.com/edited-volume/34226/chapter-abstract/290220389">Joshua in Reception History (Oxford Handbook of the Historical Books of the Hebrew Bible, 2020)</a> <span class="tag">paper</span></li>
+<li><a href="https://www.bibleodyssey.org/articles/slavery-in-the-hebrew-bible/">Slavery in the Hebrew Bible (Bible Odyssey, 2019)</a></li>
+<li><span class="nolink">Judges, Rabbinic Literature (Encyclopedia of the Bible and Its Reception 14, 2017)</span></li>
+<li><span class="nolink">Joshua, Second Temple (Encyclopedia of the Bible and Its Reception 14, 2017)</span></li>
+<li><span class="nolink">Joshua, Rabbinic Literature (Encyclopedia of the Bible and Its Reception 14, 2017)</span></li>
+<li><span class="nolink">Fornication (Encyclopedia of the Bible and Its Reception 9, 2014)</span></li>
+<li><span class="nolink">Flagellation, Judaism (Encyclopedia of the Bible and Its Reception 9, 2014)</span></li>
+<li><span class="nolink">False Witness (Encyclopedia of the Bible and Its Reception 8, 2014)</span></li>
+</ul></div></section><section class="block"><div class="wrap"><div class="sec-head"><div><div class="label">My Jewish Learning</div><h2>Shorter pieces</h2></div><div class="body"><p>Short essays written for <a href="https://www.myjewishlearning.com/author/rabbi-dr-zev-farber/">My Jewish Learning</a>.</p></div></div><ul class="arch cols">
+<li><a href="https://www.myjewishlearning.com/article/why-mikveh-isnt-mentioned-in-the-torah/">Why Mikveh Isn&#x27;t Mentioned in the Torah</a></li>
+<li><a href="https://www.myjewishlearning.com/article/christmas-and-hanukkah-have-more-in-common-than-you-think/">Christmas and Hanukkah Have More in Common Than You Think</a></li>
+<li><a href="https://www.myjewishlearning.com/article/king-saul-the-first-king-of-israel/">King Saul: The First King of Israel</a></li>
+<li><a href="https://www.myjewishlearning.com/article/does-the-bible-approve-of-kings/">Does the Bible Approve of Kings?</a></li>
+<li><a href="https://www.myjewishlearning.com/article/was-noah-just-gods-favorite/">Was Noah Just God&#x27;s Favorite?</a></li>
+<li><a href="https://www.myjewishlearning.com/article/the-enemy-is-ourselves/">The Enemy Is Ourselves</a></li>
+<li><a href="https://www.myjewishlearning.com/article/between-nationalism-and-ethics/">Between Nationalism and Ethics</a></li>
+<li><a href="https://www.myjewishlearning.com/article/vashtis-bad-rap/">Vashti&#x27;s Bad Rap</a></li>
+<li><a href="https://www.myjewishlearning.com/article/why-hanukkah-became-such-a-big-deal/">Why Hanukkah Became Such a Big Deal</a></li>
+<li><a href="https://www.myjewishlearning.com/article/the-anxiety-of-autumn/">The Anxiety of Autumn</a></li>
+<li><a href="https://www.myjewishlearning.com/article/hope-and-curses/">Hope and Curses</a></li>
+<li><a href="https://www.myjewishlearning.com/article/living-as-neighbors/">Living as Neighbors</a></li>
+<li><a href="https://www.myjewishlearning.com/article/law-of-the-king/">Law of the King</a></li>
+</ul></div></section></div><section class="actions"><div class="wrap"><div class="act">
+<div><div class="label">Next</div><h2>Buy <em>The Bible's First Kings</em></h2><p class="act-note">Uncovering the story of Saul, David, and Solomon, with Avraham Faust. Cambridge University Press, 2025.</p></div>
+<div class="act-btns"><a class="btn primary" href="https://www.amazon.com/dp/1009526332">Buy The Bible&#x27;s First Kings</a><a class="act-link" href="https://preview.mailerlite.com/webforms/landing/i9y0l8">Get the TheTorah.com newsletter →</a><a class="act-link" href="speaking.html">Book a lecture →</a></div>
+</div></div></section>
+<footer><div class="wrap"><span>© 2026 Zev I. Farber · <a href="contact.html">Contact</a> · <a href="speaking.html">Speaking</a> · <a href="consulting.html">Consulting</a> · <a href="books.html">Books</a> · Portraits by Tamar Hersko</span><span class="soc"><a href="https://il.linkedin.com/in/zev-farber-3a9a586b">LinkedIn</a> · <a href="https://www.facebook.com/Zev.Israel.Farber/">Facebook</a> · <a href="https://twitter.com/FarberZev">X / Twitter</a> · <a href="https://www.youtube.com/@zev.i.farber">YouTube</a></span></div></footer>
+</div>
+</body>
+</html>
