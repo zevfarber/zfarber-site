@@ -20,6 +20,7 @@ SOCIAL = [('LinkedIn', 'https://il.linkedin.com/in/zev-farber-3a9a586b'),
           ('YouTube', 'https://www.youtube.com/@zev.i.farber')]
 
 LINKS = {
+    'atlas': 'https://holylandhistoricalatlas.org/',
     'torah_news': 'https://preview.mailerlite.com/webforms/landing/i9y0l8',
     'torah_author': 'https://www.thetorah.com/author/zev-farber',
     'prisma_list': 'https://prisma.guide/#signup',
@@ -136,7 +137,7 @@ TORAH_BLOCK = f'''<article class="proj thetorah">
 ATLAS_BAND = f'''<section class="atlas band"><div class="wrap">
   <div>
     <div class="label">In development</div>
-    <h2>HolyLand Historical Atlas</h2>
+    <h2><a href="{LINKS['atlas']}">HolyLand Historical Atlas</a></h2>
     <p>An interactive, trilingual historical atlas of the land, from the ancient period to the present, to be built by scholars of all backgrounds.</p>
   </div>
   <div class="ask">
@@ -197,14 +198,14 @@ TORAH_BOX = f'''<div class="pbox thetorah">
   <div class="pbox-acts"><a class="btn small" href="{LINKS['torah_news']}">Get the newsletter</a><a class="more" href="{LINKS['torah_author']}">My essays →</a></div>
 </div>'''
 ATLAS_BOX = f'''<div class="pbox atlas">
-  <div class="wordmark">HolyLand Historical Atlas</div>
+  <div class="wordmark"><a href="{LINKS['atlas']}">HolyLand Historical Atlas</a></div>
   <div class="role">In development · looking for funders and partners</div>
   <div class="pbox-acts"><a class="btn small primary" href="contact.html">Partner in the Atlas</a></div>
 </div>'''
 
 PRISMA_SIG = '<a class="sig prisma" href="https://prisma.guide"><img src="img/prisma-logo.png" alt="Prisma"></a>'
 TORAH_SIG = f'<a class="sig thetorah" href="{LINKS["torah_author"]}"><img src="img/thetorah-logo-white.svg" alt="TheTorah.com"></a>'
-ATLAS_SIG = '<a class="sig atlas" href="contact.html"><span class="wordmark">HolyLand Historical Atlas</span><span class="tag-dev">In development</span></a>'
+ATLAS_SIG = f'<a class="sig atlas" href="{LINKS["atlas"]}"><span class="wordmark">HolyLand Historical Atlas</span><span class="tag-dev">In development</span></a>'
 
 def proj_band(block):
     return f'<section class="band proj-band"><div class="wrap"><div class="projects one">{block}</div></div></section>'
@@ -284,7 +285,7 @@ COLLAGE = '<div class="collage">' + ''.join([
     cl(LINKS['paintedwolf'], CIMG('paintedwolf-logo.png', 'Painted Wolf'), 73, 42, 17, 0, 2, 'logo'),
     # bottom row
     cl('books.html', '<span>Lectorium</span>', 2, 71, 26, -1, 2, 'word', 'lectorium.jpg'),
-    cl('israel.html', '<span>HolyLand Historical Atlas</span>', 5, 2, 22, -1, 3, 'card atlas'),
+    cl(LINKS['atlas'], '<span>HolyLand Historical Atlas</span>', 5, 2, 22, -1, 3, 'card atlas'),
     cl('books.html', CIMG('cover-organ.jpg', 'Halakhic Realities: Organ Donation'), 66, 68, 14, -2, 2),
     cl('books.html', CIMG('cover-doing.jpg', 'Doing What It Takes'), 84, 66, 14, 2, 2),
 ]) + '</div>'
