@@ -315,8 +315,8 @@ b += proj_band(TORAH_BLOCK)
 b += paper(
     section('Torah', 'Genesis to Deuteronomy', render_list(parse('torah'))),
     section('', 'Joshua &amp; Judges', render_list(parse('joshua-judges'))),
-    section('Holidays', 'The Festivals', render_list(parse('holidays'))),
-    section('Theology', 'Torah, history, and belief', render_list(parse('theology'))),
+    section('', 'The Festivals', render_list(parse('holidays'))),
+    section('', 'Torah, history, and belief', render_list(parse('theology'))),
     section('Education', 'Teaching Torah with the scholarship in view', render_list(parse('education'))),
     section('Academic', 'Articles, chapters, edited volumes, and reference works', render_list(parse('academic-bible')), '<p>Peer-reviewed articles and book chapters, two journal volumes I edited, and entries in reference works. Items without a link are in print only.</p>'),
     section('My Jewish Learning', 'Shorter pieces', render_list(parse('mjl')), '<p>Short essays written for <a href="https://www.myjewishlearning.com/author/rabbi-dr-zev-farber/">My Jewish Learning</a>.</p>'))
