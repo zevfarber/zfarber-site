@@ -54,13 +54,6 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 .hero-photo{position:relative;min-height:60vh;overflow:hidden}
 .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;filter:saturate(.85) contrast(1.05)}
 .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--black) 0%,rgba(12,13,16,.35) 18%,rgba(12,13,16,0) 45%),linear-gradient(0deg,var(--black) 0%,rgba(12,13,16,0) 30%)}
-/* desktop: photo smaller, set back in the dark, edges faded, so it reads less close-up */
-@media (min-width:861px){
-  .hero-photo img{position:absolute;right:4%;bottom:0;width:auto;height:80%;max-width:92%;
-    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 35%,#000 88%,transparent 100%),linear-gradient(180deg,transparent 0,#000 20%,#000 75%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 35%,#000 88%,transparent 100%),linear-gradient(180deg,transparent 0,#000 20%,#000 75%,transparent 100%);
-    -webkit-mask-composite:source-in;mask-composite:intersect}
-  .hero-photo::after{display:none}
-}
 
 .pbox-wrap{align-self:flex-start}
 .sig{display:inline-flex;flex-direction:column;gap:6px;opacity:.92}
