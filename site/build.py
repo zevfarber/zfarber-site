@@ -339,7 +339,7 @@ h += paper(
     section('Medical ethics', 'Brain death, organ donation, autopsies', render_list(parse('medical-ethics'))),
     section('Women', 'Agunah, modesty, prayer', render_list(parse('women-s-issues'))),
     section('LGBTQ', 'LGBTQ Jews and Orthodoxy', render_list(parse('lgbtq'))),
-    section('Conversion', 'Conversion', render_list(parse('conversion'))),
+    section('', 'Conversion', render_list(parse('conversion'))),
     section('Abuse and advocacy', 'Sexual abuse in the community', render_list(parse('social-advocacy'))),
     section('Responsa', 'Questions and answers', render_list(parse('question-answer')), '<p>Short answers written for <a href="http://www.jewishvaluesonline.org">Jewish Values Online</a>.</p>'),
     section('Academic', 'Articles and chapters', render_list(parse('academic-halakha'))))
