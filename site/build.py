@@ -314,7 +314,7 @@ b = page_header('Bible', 'Essays on the <em>Hebrew Bible</em>',
 b += proj_band(TORAH_BLOCK)
 b += paper(
     section('Torah', 'Genesis to Deuteronomy', render_list(parse('torah'))),
-    section('Joshua and Judges', 'Joshua and Judges', render_list(parse('joshua-judges'))),
+    section('', 'Joshua &amp; Judges', render_list(parse('joshua-judges'))),
     section('Holidays', 'The Festivals', render_list(parse('holidays'))),
     section('Theology', 'Torah, history, and belief', render_list(parse('theology'))),
     section('Education', 'Teaching Torah with the scholarship in view', render_list(parse('education'))),
@@ -477,18 +477,18 @@ pages['404.html'] = ('Page not found · Zev Farber', page_header('404', 'No such
 BODY_CLASS = {'fiction.html': 'noir'}
 for name, (title, body) in pages.items():
     frag = ARTIFACT and not SITE and name == 'index.html'
-    with open(os.path.join(OUT, name), 'w', encoding='utf-8') as f:
+    with open(os.path.join(OUT, name), 'w', encoding='utf-8', newline='\n') as f:
         f.write(shell(name, title, body, fragment=frag, body_class=BODY_CLASS.get(name, '')))
 img_out = os.path.join(OUT, 'img')
 if os.path.isdir(img_out):
-    shutil.rmtree(img_out)
-shutil.copytree(os.path.join(ROOT, 'img'), img_out)
+    shutil.rmtree(img_out, ignore_errors=True)  # OneDrive can lock the folder itself
+shutil.copytree(os.path.join(ROOT, 'img'), img_out, dirs_exist_ok=True)
 if SITE:
     base = 'https://zfarber.com/'
     urls = [base] + [base + n for n in pages if n not in ('index.html', '404.html', 'thanks.html')]
-    with open(os.path.join(OUT, 'sitemap.xml'), 'w', encoding='utf-8') as f:
+    with open(os.path.join(OUT, 'sitemap.xml'), 'w', encoding='utf-8', newline='\n') as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{u}</loc></url>\n' for u in urls) + '</urlset>\n')
-    with open(os.path.join(OUT, 'robots.txt'), 'w', encoding='utf-8') as f:
+    with open(os.path.join(OUT, 'robots.txt'), 'w', encoding='utf-8', newline='\n') as f:
         f.write('User-agent: *\nAllow: /\nSitemap: https://zfarber.com/sitemap.xml\n')
     # redirects from the old Wix site
     old = {'/bible': '/bible.html', '/torah': '/bible.html', '/joshua-judges': '/bible.html', '/holidays': '/bible.html',
@@ -502,7 +502,7 @@ if SITE:
         """GitHub Pages has no server redirects: write a tiny page at the old path that forwards."""
         d = os.path.join(OUT, path.strip('/'))
         os.makedirs(d, exist_ok=True)
-        with open(os.path.join(d, 'index.html'), 'w', encoding='utf-8') as f:
+        with open(os.path.join(d, 'index.html'), 'w', encoding='utf-8', newline='\n') as f:
             f.write(f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Zev Farber</title>'
                     f'<link rel="canonical" href="https://zfarber.com{target}"><meta http-equiv="refresh" content="0; url={target}">'
                     f'<meta name="robots" content="noindex"></head><body><p>Moved: <a href="{target}">zfarber.com{target}</a></p></body></html>')
@@ -518,7 +518,7 @@ if SITE:
             dst = os.path.join(OUT, oldrel)
             os.makedirs(os.path.dirname(dst), exist_ok=True)
             shutil.copyfile(src, dst)
-    with open(os.path.join(ROOT, 'pdf-list.txt'), 'w', encoding='utf-8') as f:
+    with open(os.path.join(ROOT, 'pdf-list.txt'), 'w', encoding='utf-8', newline='\n') as f:
         f.write('# old Wix URL -> new path (download each, save under docs/pdf/)\n' + '\n'.join(f'{u} -> docs{p}' for u, p in sorted(PDF_MAP.items())) + '\n')
     open(os.path.join(OUT, '.nojekyll'), 'w').close()  # serve _files/ and other underscore paths as-is
 print('built', len(pages), 'pages ->', OUT, '(artifact mode)' if ARTIFACT else '(site mode)' if SITE else '')
