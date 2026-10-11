@@ -243,7 +243,6 @@ pages['index.html'] = ('Zev Farber', f'''
 </header>
 
 <section class="band"><div class="wrap">
-  <div class="label">Where I work</div>
   <div class="projects">
     {PRISMA_BLOCK}
     {TORAH_BLOCK}
