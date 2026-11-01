@@ -57,6 +57,10 @@ DESCS = {
     'contact.html': 'Contact Zev I. Farber.',
 }
 
+# GoatCounter: page views, plus a click event for every link that leaves the site (path = link URL, title = what was clicked)
+GOATCOUNTER = '''<script data-goatcounter="https://zfarber.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a||!/^https?:/.test(a.href)||a.host===location.host||!window.goatcounter||!goatcounter.count)return;var img=a.querySelector('img'),t=(a.getAttribute('title')||(img&&img.alt)||a.innerText||'').trim(),box=a.closest('article,section'),h=box&&box.querySelector('h2,h3');if(t.length<12&&h)t=h.innerText.trim()+' — '+t;goatcounter.count({path:a.href,title:t||a.href,event:true})});</script>'''
+
 def shell(page, title, body, fragment=False, body_class=''):
     CUR = ' aria-current="page"'
     nav = ''.join(f'<a href="{h}"{CUR if h == page else ""}>{t}</a>' for h, t in NAV)
@@ -72,7 +76,7 @@ def shell(page, title, body, fragment=False, body_class=''):
 {body}
 <footer><div class="wrap"><span>© 2026 Zev I. Farber · <a href="contact.html">Contact</a> · <a href="speaking.html">Speaking</a> · <a href="consulting.html">Consulting</a> · <a href="books.html">Books</a> · Portraits by <a href="https://www.tamarhersko.com/photography">Tamar Hersko</a></span><span class="soc">{social}</span></div></footer>
 <script>(function(){{var n=document.querySelector('nav'),y=window.scrollY;window.addEventListener('scroll',function(){{var c=window.scrollY;n.classList.toggle('nav-hide',c>y&&c>120);y=c}},{{passive:true}})}})();</script>
-<script data-goatcounter="https://zfarber.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+{GOATCOUNTER}
 </div>'''
     if fragment:
         return doc
