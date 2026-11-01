@@ -313,8 +313,11 @@ footer a:hover{color:var(--white)}
   .covers{flex-wrap:wrap}
   .novel{grid-template-columns:1fr}
   .novel .cover{width:150px}
-  .hero-photo{aspect-ratio:5/4}
-  .phead-photo{aspect-ratio:16/9}
+  .hero-photo{aspect-ratio:1/1}
+  .hero-photo img{object-position:50% 3%}
+  .phead-photo{aspect-ratio:3/2}
+  .phead-photo img{object-position:50% var(--crop-y,20%)}
+  .hero-photo::after,.phead-photo::after{background:linear-gradient(0deg,var(--black) 0%,rgba(12,13,16,0) 20%)}
   .side-img{max-width:220px}
 }
 @media (prefers-reduced-motion:reduce){.cover,.btn{transition:none}.cover:hover{transform:none}}
@@ -325,7 +328,7 @@ footer a:hover{color:var(--white)}
 <body>
 <div class="site">
 <nav><div class="wrap"><a class="brand" href="index.html">Zev I. Farber</a><div class="menu"><a href="about.html">About</a><a href="religion.html" aria-current="page">Religion</a><a href="bible.html">Bible</a><a href="halakha.html">Halakha</a><a href="israel.html">Israel</a><a href="fiction.html">Fiction</a><a class="menu-cta" href="contact.html">Contact</a></div></div></nav>
-<header class="phead has-box"><div class="phead-text"><div class="pbox-wrap"><a class="sig prisma" href="https://prisma.guide"><img src="img/prisma-logo.png" alt="Prisma"></a></div><div class="phead-bottom"><div class="label">Religion</div><h1>Synergistic <em>religion</em></h1><p class="lead">For most of history, religions have competed with each other over which of them, if any, has the truth. In contrast, I see religions as expressions of deep metaphorical and mythic truths, which can be explored together as different facets of a prism, unique but mutually reinforcing, and never collapsed into one. This is the idea behind Prisma.</p></div></div><div class="phead-photo"><img src="img/religion.jpg" alt=""></div></header><section class="band proj-band"><div class="wrap"><div class="projects one"><article class="proj prisma">
+<header class="phead has-box"><div class="phead-text"><div class="pbox-wrap"><a class="sig prisma" href="https://prisma.guide"><img src="img/prisma-logo.png" alt="Prisma"></a></div><div class="phead-bottom"><div class="label">Religion</div><h1>Synergistic <em>religion</em></h1><p class="lead">For most of history, religions have competed with each other over which of them, if any, has the truth. In contrast, I see religions as expressions of deep metaphorical and mythic truths, which can be explored together as different facets of a prism, unique but mutually reinforcing, and never collapsed into one. This is the idea behind Prisma.</p></div></div><div class="phead-photo" style="--crop-y:9%"><img src="img/religion.jpg" alt=""></div></header><section class="band proj-band"><div class="wrap"><div class="projects one"><article class="proj prisma">
   <div class="logo"><img src="img/prisma-logo.png" alt="Prisma"></div>
   <div class="role">Founder and Director</div>
   <h3>Prisma</h3>

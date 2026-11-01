@@ -313,8 +313,11 @@ footer a:hover{color:var(--white)}
   .covers{flex-wrap:wrap}
   .novel{grid-template-columns:1fr}
   .novel .cover{width:150px}
-  .hero-photo{aspect-ratio:5/4}
-  .phead-photo{aspect-ratio:16/9}
+  .hero-photo{aspect-ratio:1/1}
+  .hero-photo img{object-position:50% 3%}
+  .phead-photo{aspect-ratio:3/2}
+  .phead-photo img{object-position:50% var(--crop-y,20%)}
+  .hero-photo::after,.phead-photo::after{background:linear-gradient(0deg,var(--black) 0%,rgba(12,13,16,0) 20%)}
   .side-img{max-width:220px}
 }
 @media (prefers-reduced-motion:reduce){.cover,.btn{transition:none}.cover:hover{transform:none}}
@@ -325,7 +328,7 @@ footer a:hover{color:var(--white)}
 <body>
 <div class="site">
 <nav><div class="wrap"><a class="brand" href="index.html">Zev I. Farber</a><div class="menu"><a href="about.html">About</a><a href="religion.html">Religion</a><a href="bible.html" aria-current="page">Bible</a><a href="halakha.html">Halakha</a><a href="israel.html">Israel</a><a href="fiction.html">Fiction</a><a class="menu-cta" href="contact.html">Contact</a></div></div></nav>
-<header class="phead has-box"><div class="phead-text"><div class="pbox-wrap"><a class="sig thetorah" href="https://www.thetorah.com/author/zev-farber"><img src="img/thetorah-logo-white.svg" alt="TheTorah.com"></a></div><div class="phead-bottom"><div class="label">Bible</div><h1>Essays on the <em>Hebrew Bible</em></h1></div></div><div class="phead-photo"><img src="img/bible.jpg" alt=""></div></header><section class="band proj-band"><div class="wrap"><div class="projects one"><article class="proj thetorah">
+<header class="phead has-box"><div class="phead-text"><div class="pbox-wrap"><a class="sig thetorah" href="https://www.thetorah.com/author/zev-farber"><img src="img/thetorah-logo-white.svg" alt="TheTorah.com"></a></div><div class="phead-bottom"><div class="label">Bible</div><h1>Essays on the <em>Hebrew Bible</em></h1></div></div><div class="phead-photo" style="--crop-y:7%"><img src="img/bible.jpg" alt=""></div></header><section class="band proj-band"><div class="wrap"><div class="projects one"><article class="proj thetorah">
   <div class="logo"><img src="img/thetorah-logo-white.svg" alt="TheTorah.com"></div>
   <div class="role">Senior Editor and Fellow</div>
   <h3>TheTorah.com</h3>

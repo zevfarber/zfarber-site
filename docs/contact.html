@@ -313,8 +313,11 @@ footer a:hover{color:var(--white)}
   .covers{flex-wrap:wrap}
   .novel{grid-template-columns:1fr}
   .novel .cover{width:150px}
-  .hero-photo{aspect-ratio:5/4}
-  .phead-photo{aspect-ratio:16/9}
+  .hero-photo{aspect-ratio:1/1}
+  .hero-photo img{object-position:50% 3%}
+  .phead-photo{aspect-ratio:3/2}
+  .phead-photo img{object-position:50% var(--crop-y,20%)}
+  .hero-photo::after,.phead-photo::after{background:linear-gradient(0deg,var(--black) 0%,rgba(12,13,16,0) 20%)}
   .side-img{max-width:220px}
 }
 @media (prefers-reduced-motion:reduce){.cover,.btn{transition:none}.cover:hover{transform:none}}
@@ -325,7 +328,7 @@ footer a:hover{color:var(--white)}
 <body>
 <div class="site">
 <nav><div class="wrap"><a class="brand" href="index.html">Zev I. Farber</a><div class="menu"><a href="about.html">About</a><a href="religion.html">Religion</a><a href="bible.html">Bible</a><a href="halakha.html">Halakha</a><a href="israel.html">Israel</a><a href="fiction.html">Fiction</a><a class="menu-cta" href="contact.html" aria-current="page">Contact</a></div></div></nav>
-<header class="phead"><div class="phead-text"><div class="phead-bottom"><div class="label">Contact</div><h1>Write <em>to me</em></h1></div></div><div class="phead-photo"><img src="img/contact.jpg" alt=""></div></header><div class="paper"><section class="block contact"><div class="wrap">
+<header class="phead"><div class="phead-text"><div class="phead-bottom"><div class="label">Contact</div><h1>Write <em>to me</em></h1></div></div><div class="phead-photo" style="--crop-y:11%"><img src="img/contact.jpg" alt=""></div></header><div class="paper"><section class="block contact"><div class="wrap">
   <div>
     <div class="ways"><h3><a href="speaking.html">Speaking</a></h3><p class="muted">Lectures, courses, and scholar-in-residence weekends, in person or online. A note with the date, place, and audience is enough to start.</p><a class="more" href="speaking.html">Topics and details →</a></div>
     <div class="ways"><h3><a href="consulting.html">Consulting</a></h3><p class="muted">Private conversations, by appointment, for people working out their religious or theological beliefs. A few lines about what you are thinking through is enough to start.</p><a class="more" href="consulting.html">More about consulting →</a></div>

@@ -105,9 +105,13 @@ def section(label, h2, body='', intro=''):
 def paper(*sections):
     return '<div class="paper">' + ''.join(sections) + '</div>'
 
+# Where the face sits in each header photo (vertical crop point on phones, in %)
+PHONE_CROP = {'about': 18, 'bible': 7, 'books': 18, 'consulting': 30, 'contact': 11, 'fiction': 5,
+              'halakha': 14, 'israel': 7, 'religion': 9, 'speaking': 7}
+
 def page_header(label, h1, lead='', photo=None, box=''):
     lead_html = f'<p class="lead">{lead}</p>' if lead else ''
-    photo_html = f'<div class="phead-photo"><img src="img/{photo}.jpg" alt=""></div>' if photo else ''
+    photo_html = f'<div class="phead-photo" style="--crop-y:{PHONE_CROP.get(photo, 20)}%"><img src="img/{photo}.jpg" alt=""></div>' if photo else ''
     box_html = f'<div class="pbox-wrap">{box}</div>' if box else ''
     return f'<header class="phead{" has-box" if box else ""}"><div class="phead-text">{box_html}<div class="phead-bottom"><div class="label">{esc(label)}</div><h1>{h1}</h1>{lead_html}</div></div>{photo_html}</header>'
 

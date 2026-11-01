@@ -313,8 +313,11 @@ footer a:hover{color:var(--white)}
   .covers{flex-wrap:wrap}
   .novel{grid-template-columns:1fr}
   .novel .cover{width:150px}
-  .hero-photo{aspect-ratio:5/4}
-  .phead-photo{aspect-ratio:16/9}
+  .hero-photo{aspect-ratio:1/1}
+  .hero-photo img{object-position:50% 3%}
+  .phead-photo{aspect-ratio:3/2}
+  .phead-photo img{object-position:50% var(--crop-y,20%)}
+  .hero-photo::after,.phead-photo::after{background:linear-gradient(0deg,var(--black) 0%,rgba(12,13,16,0) 20%)}
   .side-img{max-width:220px}
 }
 @media (prefers-reduced-motion:reduce){.cover,.btn{transition:none}.cover:hover{transform:none}}
