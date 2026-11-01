@@ -72,6 +72,7 @@ def shell(page, title, body, fragment=False, body_class=''):
 {body}
 <footer><div class="wrap"><span>© 2026 Zev I. Farber · <a href="contact.html">Contact</a> · <a href="speaking.html">Speaking</a> · <a href="consulting.html">Consulting</a> · <a href="books.html">Books</a> · Portraits by <a href="https://www.tamarhersko.com/photography">Tamar Hersko</a></span><span class="soc">{social}</span></div></footer>
 <script>(function(){{var n=document.querySelector('nav'),y=window.scrollY;window.addEventListener('scroll',function(){{var c=window.scrollY;n.classList.toggle('nav-hide',c>y&&c>120);y=c}},{{passive:true}})}})();</script>
+<script data-goatcounter="https://zfarber.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </div>'''
     if fragment:
         return doc
