@@ -86,6 +86,7 @@ def shell(page, title, body, fragment=False, body_class=''):
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(DESCS.get(page, DESCS['index.html']))}">
 <meta property="og:image" content="https://zfarber.com/img/hero.jpg">
+<meta name="google-site-verification" content="jgPtxqcSDhJx53bHlf13cmfjBnSgsMUzbwbYsKhySx8">
 {head}
 </head>
 <body>
