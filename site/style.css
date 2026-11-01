@@ -301,6 +301,9 @@ footer a:hover{color:var(--white)}
   .covers{flex-wrap:wrap}
   .novel{grid-template-columns:1fr}
   .novel .cover{width:150px}
+  .hero-photo{aspect-ratio:5/4}
+  .phead-photo{aspect-ratio:16/9}
+  .side-img{max-width:220px}
 }
 @media (prefers-reduced-motion:reduce){.cover,.btn{transition:none}.cover:hover{transform:none}}
 
