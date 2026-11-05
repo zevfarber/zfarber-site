@@ -325,7 +325,7 @@ INTERVIEWS = {
         ("Jews Mark a Subdued Tisha B'Av Under Pandemic", 'i24NEWS English, Headlines · July 30, 2020', ''),
         ('A Godly Bible Filled with Errors?', 'Host: Misha Clebaner · Raising Holy Sparks Podcast, Episode 31 · July 12, 2019', 'https://mishaclebaner.com/2019/07/12/episode31/'),
         ('Discussing TheTorah.com', 'Host: Matthew Lynch · OnScript, segment 59:49–1:08:10 · December 5, 2017', 'https://onscript.study/podcast-player/721/special-announcement-short-interview-mix.mp3#t=3589'),
-        ('Is Believing in the Multiple Authorship of the Torah Kosher?', 'Host: Mottle Wolfe · The Mottle Wolfe Show · October 19, 2017', 'https://podtail.se/podcast/the-mottle-wolfe-show/is-believing-in-multiple-authorship-of-the-torah-k/'),
+        ('Is Believing in the Multiple Authorship of the Torah Kosher?', 'Host: Mottle Wolfe · The Mottle Wolfe Show · October 19, 2017', ''),
         ('Who Wrote the Bible? Does It Matter?', 'Host: Mottle Wolfe · The Voice of Israel: The Mottle Wolfe Show · August 14, 2015', 'https://soundcloud.com/rebmottle/who-wrote-the-bible-does-it-matter'),
         ('David, Saul, and Sin', 'NEH and SBL · April 2010', ''),
     ],
