@@ -7,6 +7,8 @@ Products = books, course, Lectorium (beta). Every topic page ends with a hire-my
 """
 import re, sys, os, base64, html, shutil
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'build_helpers.py'), encoding='utf-8').read())
+# PDFs whose list title changed: keep the file at its original address
+PDF_MAP['https://www.zfarber.com/_files/ugd/8598b9_f934353e57344a02a7229587d3437660.pdf'] = '/pdf/Transgender-Orthodox-Jews.pdf'
 
 with open(os.path.join(ROOT, 'style.css'), encoding='utf-8') as f:
     CSS = f.read()
