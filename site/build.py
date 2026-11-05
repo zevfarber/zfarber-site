@@ -318,6 +318,41 @@ COLLAGE = '<div class="collage">' + ''.join([
     cl('books.html', CIMG('cover-doing.jpg', 'Doing What It Takes'), 84, 66, 14, 2, 2),
 ]) + '</div>'
 
+# Interviews, grouped by the topic page they appear on: (title, details line, link or '' for none). Newest first.
+INTERVIEWS = {
+    'bible': [
+        ('King Saul vs King David: Who Really Founded Ancient Israel?', 'Host: Alex Tseitlin · Kedem · November 19, 2025', 'https://www.youtube.com/watch?v=XoZzuE-WQdM'),
+        ("Jews Mark a Subdued Tisha B'Av Under Pandemic", 'i24NEWS English, Headlines · July 30, 2020', ''),
+        ('A Godly Bible Filled with Errors?', 'Host: Misha Clebaner · Raising Holy Sparks Podcast, Episode 31 · July 12, 2019', 'https://mishaclebaner.com/2019/07/12/episode31/'),
+        ('Discussing TheTorah.com', 'Host: Matthew Lynch · OnScript, segment 59:49–1:08:10 · December 5, 2017', 'https://onscript.study/podcast-player/721/special-announcement-short-interview-mix.mp3#t=3589'),
+        ('Is Believing in the Multiple Authorship of the Torah Kosher?', 'Host: Mottle Wolfe · The Mottle Wolfe Show · October 19, 2017', 'https://podtail.se/podcast/the-mottle-wolfe-show/is-believing-in-multiple-authorship-of-the-torah-k/'),
+        ('Who Wrote the Bible? Does It Matter?', 'Host: Mottle Wolfe · The Voice of Israel: The Mottle Wolfe Show · August 14, 2015', 'https://soundcloud.com/rebmottle/who-wrote-the-bible-does-it-matter'),
+        ('David, Saul, and Sin', 'NEH and SBL · April 2010', ''),
+    ],
+    'israel': [
+        ('Why Did the Jews Leave the Land of Israel?', 'Host: Alex Tseitlin · Global Insights · November 13, 2024', 'https://www.youtube.com/watch?v=dywwEB_B-OY'),
+        ('The Fight for the Land of Israel: Historic Perspective', 'Host: Alex Tseitlin · Global Insights · June 18, 2024', 'https://www.youtube.com/watch?v=Yaf7BU75twA'),
+        ('People of Israel and the Land of Israel', 'Host: Alex Tseitlin · Global Insights · April 29, 2024', 'https://www.youtube.com/watch?v=7wxahmYTAvg'),
+        ('My Aliyah Story', 'Host: Jay Hait · Israel Aliyah · September 2, 2023', ''),
+        ("Discussing Israel's Deportation of Eritrean Refugees", 'Host: Jeff Smith · i24NEWS Daily Dose, segment 1:22:39–1:26:20 · January 23, 2018', 'https://www.dailymotion.com/video/x6dkhmy?start=4959'),
+    ],
+    'religion': [
+        ('Faith', 'Host: Yael Valier · Theater and Theology, following the performance of Miracle on South Division Street · Jerusalem Theater · January 24, 2024', ''),
+        ('Towards a Religion Without Dogma', 'Host: Levi Brackman · Truths: Jewish Wisdom for Today · June 22, 2023', 'https://www.youtube.com/watch?v=U63VXCzy8cc'),
+    ],
+    'halakha': [
+        ('Halakhic Realities: Collected Essays on Organ Donation', 'Host: Gilad Halpern · The Tel Aviv Review Podcast · January 13, 2017', 'https://tlv1.fm/the-tel-aviv-review/2017/01/13/a-different-kind-of-tzedakah-organ-donation-in-jewish-law/'),
+        ('Sacred Sperm: Discussion Following the Film', 'Moderator: Don Seeman, with Rabbi Zalman Lipskier and Rabbi Brian Glusman · Atlanta Jewish Film Festival · February 15, 2015', 'https://www.youtube.com/watch?v=ldjCfAUXDvU'),
+    ],
+}
+def interview_li(t, d, u):
+    title = f'<a href="{esc(u)}">{esc(t)}</a>' if u else f'<span class="nolink">{esc(t)}</span>'
+    return f'<li>{title}<small>{esc(d)}</small></li>'
+def interviews(topic):
+    items = INTERVIEWS[topic]
+    return section('Interviews', 'Podcasts, broadcasts, and conversations',
+                   f'<ul class="arch{" cols" if len(items) > 1 else ""}">' + ''.join(interview_li(*i) for i in items) + '</ul>')
+
 ab = page_header('Rabbi · Ph.D. · Dayan', 'Zev I. Farber', '', photo='fiction', box=COLLAGE)
 ab += paper(
     *(['<section class="block"><div class="wrap"><div class="statement prose">' + ''.join(f'<p>{esc(t)}</p>' for t in ABOUT_STATEMENT) + '</div></div></section>'] if ABOUT_STATEMENT else []),
@@ -343,6 +378,7 @@ b += paper(
     section('', 'Joshua &amp; Judges', render_list(parse('joshua-judges'))),
     section('', 'The Festivals', render_list(parse('holidays'))),
     section('', 'Torah, history, and belief', render_list(parse('theology'))),
+    interviews('bible'),
     section('Education', 'Teaching Torah with the scholarship in view', render_list(parse('education'))),
     section('Academic', 'Articles, chapters, edited volumes, and reference works', render_list(parse('academic-bible')), '<p>Peer-reviewed articles and book chapters, two journal volumes I edited, and entries in reference works. Items without a link are in print only.</p>'),
     section('My Jewish Learning', 'Shorter pieces', render_list(parse('mjl')), '<p>Short essays written for <a href="https://www.myjewishlearning.com/author/rabbi-dr-zev-farber/">My Jewish Learning</a>.</p>'))
@@ -363,6 +399,7 @@ h += paper(
 </div>'''),
     section('', 'Halakha For All', render_list(parse('beyond'), two_col=False)),
     section('Medical ethics', 'Brain death, organ donation, autopsies', render_list(parse('medical-ethics'))),
+    interviews('halakha'),
     section('Women', 'Agunah, modesty, prayer', render_list(parse('women-s-issues'))),
     section('', 'LGBTQ Jews and Orthodoxy', render_list(parse('lgbtq'))),
     section('', 'Conversion', render_list(parse('conversion'))),
@@ -377,7 +414,7 @@ pages['halakha.html'] = ('Halakha · Zev Farber', h)
 # ---------- ISRAEL ----------
 i = page_header('Israel', 'Commentary on <em>Israel</em>', f'Op-eds at the <a href="{LINKS["toi"]}">Times of Israel</a> since 2011, with a few pieces elsewhere. Newest first.', photo='israel')
 i += ATLAS_BAND
-i += paper('<section class="block"><div class="wrap">' + render_list(parse('israel')) + '</div></section>')
+i += paper('<section class="block"><div class="wrap">' + render_list(parse('israel')) + '</div></section>', interviews('israel'))
 i += actions('Next', 'Follow the commentary', ('Follow at the Times of Israel', LINKS['toi']),
              [('Partner in the Atlas', 'contact.html'), ('Book a lecture', 'speaking.html')])
 pages['israel.html'] = ('Israel · Zev Farber', i)
@@ -390,7 +427,8 @@ r += paper(
     section('', 'Prisma Talks', '<ul class="arch"><li><a href="https://www.youtube.com/watch?v=ID345_Hxmbk">Introduction to Judaism</a><small>Prisma Guide, YouTube</small></li><li><a href="https://www.youtube.com/watch?v=BJjUWywqcqM">Founder\'s Statement</a><small>Prisma Guide, YouTube</small></li></ul>'),
     section('', 'Prisma Journal', '<ul class="arch"><li><a href="https://prismaguide.substack.com/p/the-meaning-of-a-sunset">The Meaning of a Sunset</a><small>Prisma Journal, 2026</small></li><li><a href="https://prismaguide.substack.com/p/learning-to-control-our-personal">Learning to Control Our Personal Narratives</a><small>Prisma Journal, 2026</small></li><li><a href="https://prismaguide.substack.com/p/feet-together-and-hopping-like-the">Feet Together and Hopping… Like the Angels</a><small>Prisma Journal, 2025</small></li></ul>', '<p><a href="https://prismaguide.substack.com">The Journal →</a></p>'),
     section('', 'Thinking Out Loud about Synergistic Religion', render_list(parse('religion-youtube'), two_col=False), f'<p><a href="{LINKS["youtube"]}">The channel →</a></p>'),
-    section('', 'Theology', '<ul class="arch"><li><a href="https://www.thetorah.com/article/torah-is-from-heaven-what-do-we-really-mean">Torah is From Heaven: What Do We Mean?</a><small>TheTorah.com, 2019</small></li><li><a href="https://www.thetorah.com/series/avraham-avinu-is-my-father-thoughts-on-torah-history-and-judaism">Avraham Avinu is My Father: Thoughts on Torah, History, and Judaism</a><small>TheTorah.com series</small></li><li><a href="pdf/God-Consciousness-and-the-Problem-of-Anthropopathism.pdf">God, Consciousness, and the Problem of Anthropopathism</a><small>PDF</small></li></ul>'))
+    section('', 'Theology', '<ul class="arch"><li><a href="https://www.thetorah.com/article/torah-is-from-heaven-what-do-we-really-mean">Torah is From Heaven: What Do We Mean?</a><small>TheTorah.com, 2019</small></li><li><a href="https://www.thetorah.com/series/avraham-avinu-is-my-father-thoughts-on-torah-history-and-judaism">Avraham Avinu is My Father: Thoughts on Torah, History, and Judaism</a><small>TheTorah.com series</small></li><li><a href="pdf/God-Consciousness-and-the-Problem-of-Anthropopathism.pdf">God, Consciousness, and the Problem of Anthropopathism</a><small>PDF</small></li></ul>'),
+    interviews('religion'))
 r += actions('Next', 'Watch, join, or talk it through', ('Watch the channel', LINKS['youtube']),
              [('Join the Prisma mailing list', LINKS['prisma_list']), ('Book a lecture', 'speaking.html'), ('Talk something through', 'consulting.html')])
 pages['religion.html'] = ('Religion · Zev Farber', r)

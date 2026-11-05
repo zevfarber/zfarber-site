@@ -52,7 +52,7 @@ def tag_for(t, u):
         return 'PDF'
     if 'hartman.org.il' in u:
         return 'Hebrew'
-    if 'youtube.com' in u:
+    if 'youtube.com' in u or ('facebook.com' in u and '/videos/' in u):
         return 'video'
     if 'amazon.com' in u:
         return 'book'
