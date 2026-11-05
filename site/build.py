@@ -80,6 +80,20 @@ def shell(page, title, body, fragment=False, body_class=''):
 </div>'''
     if fragment:
         return doc
+    seo = ''
+    if page == 'index.html':
+        import json
+        person = {
+            '@context': 'https://schema.org', '@type': 'Person',
+            'name': 'Zev I. Farber', 'alternateName': ['Zev Farber', 'Rabbi Dr. Zev Farber', 'Z. I. Farber'],
+            'url': 'https://zfarber.com/', 'image': 'https://zfarber.com/img/hero.jpg',
+            'description': DESCS['index.html'],
+            'jobTitle': 'Senior Editor, TheTorah.com; Founder and Director, Prisma',
+            'sameAs': [u for _, u in SOCIAL] + [LINKS['torah_author'], LINKS['toi'], 'https://prisma.guide'],
+        }
+        seo = '<script type="application/ld+json">' + json.dumps(person, ensure_ascii=False) + '</script>\n'
+    if page in ('thanks.html', '404.html'):
+        seo = '<meta name="robots" content="noindex">\n'
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -91,7 +105,7 @@ def shell(page, title, body, fragment=False, body_class=''):
 <meta property="og:description" content="{esc(DESCS.get(page, DESCS['index.html']))}">
 <meta property="og:image" content="https://zfarber.com/img/hero.jpg">
 <meta name="google-site-verification" content="jgPtxqcSDhJx53bHlf13cmfjBnSgsMUzbwbYsKhySx8">
-{head}
+{seo}{head}
 </head>
 <body>
 {doc[len(head)+1:]}
