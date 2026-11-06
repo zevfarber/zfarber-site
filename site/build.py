@@ -329,7 +329,7 @@ INTERVIEWS = {
         ('Discussing TheTorah.com', 'Host: Matthew Lynch · OnScript, segment 59:49–1:08:10 · December 5, 2017', 'https://onscript.study/podcast-player/721/special-announcement-short-interview-mix.mp3#t=3589'),
         ('Is Believing in the Multiple Authorship of the Torah Kosher?', 'Host: Mottle Wolfe · The Mottle Wolfe Show · October 19, 2017', ''),
         ('Who Wrote the Bible? Does It Matter?', 'Host: Mottle Wolfe · The Voice of Israel: The Mottle Wolfe Show · August 14, 2015', 'https://soundcloud.com/rebmottle/who-wrote-the-bible-does-it-matter'),
-        ('David, Saul, and Sin', 'NEH and SBL · April 2010', ''),
+        ('David, Saul, and Sin', 'NEH and SBL · April 2010', 'https://www.bibleodyssey.org/video-gallery/david-saul-and-sin/'),
     ],
     'israel': [
         ('Why Did the Jews Leave the Land of Israel?', 'Host: Alex Tseitlin · Global Insights · November 13, 2024', 'https://www.youtube.com/watch?v=dywwEB_B-OY'),
