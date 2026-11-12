@@ -72,7 +72,7 @@ def link_li(t, u):
         PDF_MAP.setdefault(u, '/pdf/' + slugify(t) + '.pdf')
         if SITE:
             u = PDF_MAP[u].lstrip('/')  # relative, so the site also works under a sub-path
-    attrs = ' lang="he" dir="rtl"' if is_hebrew(title) else ''
+    attrs = ' lang="he" dir="rtl"' if is_hebrew(title) else (' lang="hu"' if urllib.parse.urlparse(u).netloc.endswith('.hu') else '')
     tagh = f' <span class="tag">{esc(tag)}</span>' if tag else ''
     if u in ('—', '-', 'NOTFOUND'):
         return f'<li><span class="nolink"{attrs}>{esc(title)}</span>{tagh}</li>'

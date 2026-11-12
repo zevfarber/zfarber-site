@@ -206,11 +206,15 @@ SHELF = f'''<section class="band band-2 shelf"><div class="wrap">
 PRESS = '''<section class="band"><div class="wrap">
   <div class="label">Press</div>
   <div class="press">
-    <a href="https://www.tabletmag.com/sections/belief/articles/reconciling-biblical-criticism"><b>Tablet</b><span>Reconciling Modern Biblical Scholarship With Traditional Orthodox Belief</span></a>
-    <a href="https://www.haaretz.com/israel-news/.premium-these-orthodox-jews-are-challenging-commonly-held-beliefs-about-the-torah-1.8100279"><b>Haaretz</b><span>These Orthodox Jews Are Challenging Commonly Held Beliefs About the Torah</span></a>
-    <a href="https://www.thejc.com/judaism/features/the-rabbi-behind-the-american-jacobs-affair-1.57127"><b>The Jewish Chronicle</b><span>The Rabbi Behind the American Jacobs Affair</span></a>
-    <a href="https://www.ynet.co.il/articles/0,7340,L-5551005,00.html"><b>Ynet</b><span lang="he" dir="rtl">המהפכה השקטה</span></a>
+    <a href="https://jewishpress.com/unearthing-israels-first-kings/"><b>The Jewish Press</b><span>Unearthing Israel's First Kings</span></a>
+    <a href="https://www.timesofisrael.com/despite-academic-battle-royal-a-new-book-returns-davids-kingdom-to-its-place-in-history/"><b>The Times of Israel</b><span>Despite academic battle royal, a new book returns David's kingdom to its place in history</span></a>
+    <a href="https://www.haaretz.com/jewish/2022-09-06/ty-article/.highlight/changing-attitudes-a-trans-bride-in-israel-just-got-married-by-an-orthodox-rabbi/00000183-124d-d5cb-adb3-33df0c7b0000"><b>Haaretz</b><span>Changing Attitudes? A Trans Bride in Israel Just Got Married by an Orthodox Rabbi</span></a>
+    <a href="https://mazsihisz.hu/eutanazia-es-szervadomanyozas-vilaghiru-tudos-a-zsido-egyetemen/"><b>Mazsihisz</b><span lang="hu">Eutanázia és szervadományozás: világhírű tudós a zsidó egyetemen</span></a>
+    <a href="https://www.haaretz.com/israel-news/2019-11-11/ty-article/.premium/these-orthodox-jews-are-challenging-commonly-held-beliefs-about-the-torah/0000017f-f401-dc28-a17f-fc3706cd0000"><b>Haaretz</b><span>These Orthodox Jews Are Challenging Commonly Held Beliefs About the Torah</span></a>
+    <a href="https://www.ynet.co.il/judaism/article/5551005"><b>Ynet</b><span lang="he" dir="rtl">המהפכה השקטה</span></a>
     <a href="https://academic.oup.com/mj/article-abstract/37/2/165/3789884"><b>Modern Judaism</b><span>Is Modern Orthodoxy Moving Towards an Acceptance of Biblical Criticism?</span></a>
+    <a href="https://www.thejc.com/judaism/the-rabbi-behind-the-american-jacobs-affair-dluu6sp9"><b>The Jewish Chronicle</b><span>The Rabbi Behind the American Jacobs Affair</span></a>
+    <a href="https://www.tabletmag.com/sections/belief/articles/reconciling-biblical-criticism"><b>Tablet</b><span>Reconciling Modern Biblical Scholarship With Traditional Orthodox Belief</span></a>
   </div>
 </div></section>'''
 
@@ -332,6 +336,7 @@ INTERVIEWS = {
         ('David, Saul, and Sin', 'NEH and SBL · April 2010', 'https://www.bibleodyssey.org/video-gallery/david-saul-and-sin/'),
     ],
     'israel': [
+        ('On the Jewish vote in the United States', 'Host: Alex Tseitlin · באים אל הפרופסורים · 2026', 'https://www.youtube.com/watch?v=oG7CppWg6cA'),
         ('Why Did the Jews Leave the Land of Israel?', 'Host: Alex Tseitlin · Global Insights · November 13, 2024', 'https://www.youtube.com/watch?v=dywwEB_B-OY'),
         ('The Fight for the Land of Israel: Historic Perspective', 'Host: Alex Tseitlin · Global Insights · June 18, 2024', 'https://www.youtube.com/watch?v=Yaf7BU75twA'),
         ('People of Israel and the Land of Israel', 'Host: Alex Tseitlin · Global Insights · April 29, 2024', 'https://www.youtube.com/watch?v=7wxahmYTAvg'),
@@ -349,7 +354,8 @@ INTERVIEWS = {
 }
 def interview_li(t, d, u):
     title = f'<a href="{esc(u)}">{esc(t)}</a>' if u else f'<span class="nolink">{esc(t)}</span>'
-    return f'<li>{title}<small>{esc(d)}</small></li>'
+    d = ' · '.join(f'<span lang="he" dir="rtl">{esc(p)}</span>' if is_hebrew(p) else esc(p) for p in d.split(' · '))
+    return f'<li>{title}<small>{d}</small></li>'
 def interviews(topic):
     items = INTERVIEWS[topic]
     return section('Interviews', 'Podcasts, broadcasts, and conversations',
@@ -458,15 +464,36 @@ pages['fiction.html'] = ('Fiction · Z. I. Farber', f_)
 
 # ---------- BOOKS ----------
 bk = page_header('Books', 'Books and <em>other projects</em>', 'Biblical history and Jewish law under my own name; fiction as Z.&nbsp;I.&nbsp;Farber; a course on editing; Lectorium, a reading app in beta; and Painted Wolf, a press for classic adventure fiction.', photo='books')
-def book(href, img, title, meta, verb='Buy', extra=''):
+def book(href, img, title, meta, verb='Buy', extra='', notes=''):
     t = f'<a href="{href}">{title}</a>' if href else title
     cov = cover(href, img, title) if img and href else (f'<div class="cover tile soon"><small>{esc(extra or "Forthcoming")}</small></div>' if not img else f'<div class="cover"><img src="img/{img}" alt="{esc(title)}"></div>')
     btn = f'<a class="btn small" href="{href}">{esc(verb)}</a>' if href else ''
-    return f'<article class="book">{cov}<div><h3>{t}</h3><div class="meta">{meta}</div>{btn}</div></article>'
+    return f'<article class="book">{cov}<div><h3>{t}</h3><div class="meta">{meta}</div>{notes}{btn}</div></article>'
+def reviewed(items):
+    """'Reviewed in' line: (journal, reviewer, url or '')."""
+    parts = [(f'<a href="{esc(u)}"><em>{esc(j)}</em></a>' if u else f'<em>{esc(j)}</em>') + f' ({esc(r)})' for j, r, u in items]
+    return '<p>Reviewed in ' + ', '.join(parts) + '.</p>'
+FIRST_KINGS_NOTES = reviewed([
+    ('Journal of Jewish Studies', 'Rooke', ''),
+    ('Journal for the Study of the Old Testament', 'Tiemeyer', ''),
+    ('Biblical Archaeology Review', 'Hasel', 'https://www.biblicalarchaeology.org/reviews/the-bibles-first-kings/'),
+    ('Israel Affairs', 'Rodman', ''),
+    ('ichthys', 'Dewitz', 'https://ichthys-online.de/artikel/2026_42_083/'),
+    ('The Jewish Press', 'Krampner', 'https://jewishpress.com/unearthing-israels-first-kings/'),
+]) + '<p><a href="https://publishers.org/wp-content/uploads/2026/02/2026-PROSE-Awards-Finalists-and-Category-Winners-1.pdf">Finalist, 2026 PROSE Award in Theology and Religious Studies</a></p>'
+JOSHUA_NOTES = reviewed([
+    ('Review of Biblical Literature', 'Matheny', ''),
+    ('Theologische Literaturzeitung', 'Krause', 'https://www.thlz.com/artikel/19778/'),
+    ('Bulletin for Biblical Research', 'Hawkins', 'https://doi.org/10.5325/bullbiblrese.28.1.0104'),
+    ('Biblische Notizen', 'Elßner', ''),
+    ('Revue Biblique', 'Nodet', ''),
+    ('Nouvelle Revue Théologique', 'Luciani', 'https://www.nrt.be/en/book-reviews/images-of-joshua-in-the-bible-and-their-reception-12596'),
+    ('Zeitschrift für die alttestamentliche Wissenschaft', 'Gaß', ''),
+])
 bk += paper(
     section('Scholarship', 'Bible and history', '<div class="books">' +
-        book(LINKS['first_kings'], 'cover-firstkings.jpg', "The Bible's First Kings: Uncovering the Story of Saul, David, and Solomon", 'Cambridge University Press · 2025 · with Avraham Faust · finalist, AAP PROSE Award') +
-        book(LINKS['joshua'], 'cover-joshua.jpg', 'Images of Joshua in the Bible and Their Reception', 'De Gruyter, BZAW 457 · 2016') +
+        book(LINKS['first_kings'], 'cover-firstkings.jpg', "The Bible's First Kings: Uncovering the Story of Saul, David, and Solomon", 'Cambridge University Press · 2025 · with Avraham Faust', notes=FIRST_KINGS_NOTES) +
+        book(LINKS['joshua'], 'cover-joshua.jpg', 'Images of Joshua in the Bible and Their Reception', 'De Gruyter, BZAW 457 · 2016', notes=JOSHUA_NOTES) +
         book(LINKS['judah'], 'cover-judah.jpg', 'Archaeology and History of Eighth-Century Judah', 'SBL Press · 2018 · edited with Jacob L. Wright') + '</div>'),
     section('Law', 'Jewish law', '<div class="books">' +
         book(LINKS['homosexuality'], 'cover-homosexuality.jpg', 'Homosexual Relationships and Orthodox Judaism', 'Painted Wolf · 2026 · paperback, hardcover, and Kindle') +
@@ -484,7 +511,7 @@ pages['books.html'] = ('Books · Zev Farber', bk)
 
 # ---------- SPEAKING ----------
 sp = page_header('Speaking', 'Lectures, courses, and <em>scholar-in-residence weekends</em>', photo='speaking',
-    box='<figure class="side-img"><img src="img/speaking-talk.jpg" alt="Zev Farber speaking at a conference"><figcaption>Delivering the Schweitzer keynote lecture, "Can Biblical Criticism Be Integrated into Traditional Jewish Studies and Should It Be?" at the Hungarian Hebrew Studies Conference (JTS-UJS, Budapest, Feb. 5, 2020).</figcaption></figure>')
+    box='<figure class="side-img"><img src="img/speaking-talk.jpg" alt="Zev Farber speaking at a conference"><figcaption>Keynote lecture, "<a href="https://mhk.elte.hu/2020/?a=dl&amp;l=en">Can Biblical Criticism Be Integrated into Traditional Jewish Studies and Should It Be?</a>", Hungarian Hebrew Studies Conference (Schweitzer Lectures 2020), Jewish Theological Seminary – University of Jewish Studies, Budapest, 5 February 2020.<br><a href="https://epa.oszk.hu/03100/03161/00023/pdf/EPA03161_vallastudomanyi_szemle_2020_2_121-126.pdf">Conference report (<span lang="hu">Vallástudományi Szemle</span>)</a></figcaption></figure>')
 sp += paper(
     section('Topics', 'What I talk about', '''<div class="topics">
   <div class="topic"><h3>The Bible in history</h3><p>What the Bible looks like when it is read alongside archaeology and the ancient Near East: Saul, David, and Solomon; the Exodus; Joshua and the conquest; Judah in the eighth century.</p></div>
