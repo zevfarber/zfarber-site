@@ -497,8 +497,8 @@ bk += paper(
         book(LINKS['judah'], 'cover-judah.jpg', 'Archaeology and History of Eighth-Century Judah', 'SBL Press · 2018 · edited with Jacob L. Wright') + '</div>'),
     section('Law', 'Jewish law', '<div class="books">' +
         book(LINKS['homosexuality'], 'cover-homosexuality.jpg', 'Homosexual Relationships and Orthodox Judaism', 'Painted Wolf · 2026 · paperback, hardcover, and Kindle') +
-        book(LINKS['brain'], 'cover-brain.jpg', 'Halakhic Realities: Collected Essays on Brain Death', 'Maggid · 2015 · editor') +
-        book(LINKS['organ'], 'cover-organ.jpg', 'Halakhic Realities: Collected Essays on Organ Donation', 'Maggid · 2017 · editor') + '</div>'),
+        book(LINKS['brain'], 'cover-brain.jpg', 'Halakhic Realities: Collected Essays on Brain Death', 'Maggid · 2015 · editor', notes=reviewed([('Canadian Jewish News', 'Lockshin', 'https://thecjn.ca/arts/books-and-authors/book-debates-halachic-debate-brain-death/')])) +
+        book(LINKS['organ'], 'cover-organ.jpg', 'Halakhic Realities: Collected Essays on Organ Donation', 'Maggid · 2017 · editor', notes=reviewed([('Canadian Jewish News', 'Lockshin', 'https://thecjn.ca/arts-culture/can-jews-donate-organs-second-volume-orthodox-rabbis/'), ('JUF News', 'Winberg', '')])) + '</div>'),
     section('Fiction', 'As Z. I. Farber', '<div class="books">' +
         book(LINKS['two_wrongs'], 'cover-twowrongs.jpg', 'Two Wrongs', 'Novel · paperback and Kindle') +
         book(LINKS['doing'], 'cover-doing.jpg', 'Doing What It Takes', 'Novel · paperback and Kindle') +
